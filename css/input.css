@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+/* Custom values */
+
+@theme {
+  --font-sans: "Roboto", system-ui, sans-serif;
+  --font-heading: "Playfair Display", Georgia, serif;
+
+  /* Colors */
+
+  --color-background: #f2f2f2;
+  --color-card: #ffffff;
+  --color-edges: #dddddd;
+  --color-text-muted: #aaaaaa;
+  --color-dark-bg: #262626; /* Footer, hero bg */
+  --color-text-secondary: #888888;
+  --color-dark-highlights: #484848;
+
+  /* Accent: Use these standard tailwind colors */
+  /* light: teal-500 */
+  /* primary: teal-600 / hover: teal-700 */
+  /* danger: red-500 */
+  /* danger border: red-500/50 */
+  /* danger bg: red-500/20 */
+  /* success: green-500 */
+  /* success border: green-500/50 */
+  /* success bg: green-500/20 */
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-dark-bg);
+  }
+  h1,
+  h2 {
+    font-family: var(--font-heading);
+  }
+}
