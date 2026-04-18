@@ -44,6 +44,12 @@ semester-project-2/
 
 Uses the [Noroff Auction API](https://docs.noroff.dev/docs/v2/auction-house/listings).
 
+## Figma
+
+[Figma design files](https://www.figma.com/design/FenRtXGZdgtGz5zPXx3y8X/Auction-House-Semester-Project?node-id=1-10&t=aaLcCzIKLRJXSLL5-1)
+[Figma desktop prototype](https://www.figma.com/proto/FenRtXGZdgtGz5zPXx3y8X/Auction-House-Semester-Project?node-id=1-3&t=aaLcCzIKLRJXSLL5-1)
+[Figma mobile prototype](https://www.figma.com/proto/FenRtXGZdgtGz5zPXx3y8X/Auction-House-Semester-Project?node-id=1-10&t=aaLcCzIKLRJXSLL5-1)
+
 ## License
 
 MIT
