@@ -1,11 +1,16 @@
 /*! tailwindcss v4.2.2 | MIT License | https://tailwindcss.com */
+@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
     --font-sans: "Roboto", system-ui, sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-amber-800: oklch(47.3% 0.137 46.201);
     --color-teal-500: oklch(70.4% 0.14 182.503);
+    --spacing: 0.25rem;
+    --container-xl: 36rem;
+    --container-2xl: 42rem;
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
@@ -165,6 +170,46 @@
   }
 }
 @layer utilities {
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .my-2 {
+    margin-block: calc(var(--spacing) * 2);
+  }
+  .my-auto {
+    margin-block: auto;
+  }
+  .mt-36 {
+    margin-top: calc(var(--spacing) * 36);
+  }
+  .flex {
+    display: flex;
+  }
+  .max-h-36 {
+    max-height: calc(var(--spacing) * 36);
+  }
+  .max-w-2xl {
+    max-width: var(--container-2xl);
+  }
+  .max-w-xl {
+    max-width: var(--container-xl);
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-row {
+    flex-direction: row;
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .bg-amber-800 {
+    background-color: var(--color-amber-800);
+  }
   .bg-teal-500 {
     background-color: var(--color-teal-500);
   }
@@ -190,5 +235,17 @@
   }
   h1, h2 {
     font-family: var(--font-heading);
+  }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+    }
   }
 }
