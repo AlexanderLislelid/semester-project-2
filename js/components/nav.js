@@ -26,10 +26,9 @@ const logoutBtnDesktop = document.getElementById("logout-desktop");
 if (logoutBtnDesktop) logoutBtnDesktop.addEventListener("click", logout);
 
 async function getUserProfile() {
-  const storedUser = localStorage.getItem("user");
-  const username = JSON.parse(storedUser).name;
-
   try {
+    const storedUser = localStorage.getItem("user");
+    const username = JSON.parse(storedUser).name;
     const response = await get(`auction/profiles/${username}`);
     const profile = response.data;
 
@@ -38,39 +37,48 @@ async function getUserProfile() {
     const avatar = profile.avatar;
     const credits = profile.credits;
 
-    const nameContainer = document.createElement("div");
-    const nameEl = document.createElement("p");
-    const emailEl = document.createElement("p");
-    const avatarEl = document.createElement("img");
-    avatarEl.src = profile.avatar.url;
-    avatarEl.alt = "profile avatar";
+    // mobile profile
+    const mobileAvatar = document.createElement("img");
+    mobileAvatar.src = profile.avatar.url;
+    mobileAvatar.alt = `${name}'s avatar`;
+    mobileAvatar.className = "w-14 rounded-full";
 
-    avatarEl.className = "w-14 rounded-full";
-    emailEl.className = "text-xs";
-    nameEl.className = "text-lg";
+    const mobileInfo = document.createElement("div");
+    const mobileName = document.createElement("p");
+    const mobileEmail = document.createElement("p");
+    mobileName.className = "text-lg";
+    mobileEmail.className = "text-xs";
+    mobileName.textContent = name;
+    mobileEmail.textContent = email;
+    mobileInfo.appendChild(mobileName);
+    mobileInfo.appendChild(mobileEmail);
 
-    nameEl.textContent = name;
-    emailEl.textContent = email;
+    userContainer.appendChild(mobileAvatar);
+    userContainer.appendChild(mobileInfo);
 
-    // show / hide credits on desktop nav
+    // desktop profile
+    const desktopAvatar = document.createElement("img");
+    desktopAvatar.src = profile.avatar.url;
+    desktopAvatar.alt = `${name}'s avatar`;
+    desktopAvatar.className = "w-14 rounded-full";
 
-    creditsContainer.innerHTML = `<i class="fa-regular fa-coins text-teal-500 text-xl"></i
-          >${credits}`;
-    if (!loadToken()) {
-      creditsContainer.innerHTML = "";
-    } else {
-      creditsContainer.innerHTML = `<i class="fa-regular fa-coins text-teal-500 text-xl"></i>${credits}`;
-      creditsContainerDesktop.className = "px-2 py-4  bg-teal-600 text-white";
-      creditsContainerDesktop.innerHTML = `<i class="fa-regular fa-coins mr-2"></i>${credits}`;
-    }
+    const desktopInfo = document.createElement("div");
+    const desktopName = document.createElement("p");
+    const desktopEmail = document.createElement("p");
+    desktopName.className = "text-lg";
+    desktopEmail.className = "text-xs";
+    desktopName.textContent = name;
+    desktopEmail.textContent = email;
+    desktopInfo.appendChild(desktopName);
+    desktopInfo.appendChild(desktopEmail);
 
-    nameContainer.appendChild(nameEl);
-    nameContainer.appendChild(emailEl);
-    userContainer.appendChild(avatarEl);
-    userContainer.appendChild(nameContainer);
+    userContainderDesktop.appendChild(desktopInfo);
+    userContainderDesktop.appendChild(desktopAvatar);
 
-    userContainderDesktop.appendChild(nameContainer);
-    userContainderDesktop.appendChild(avatarEl);
+    // credits
+    creditsContainer.innerHTML = `<i class="fa-regular fa-coins text-teal-500 text-xl"></i>${credits}`;
+    creditsContainerDesktop.className = "px-2 py-4 bg-teal-600 text-white";
+    creditsContainerDesktop.innerHTML = `<i class="fa-regular fa-coins mr-2"></i>${credits}`;
   } catch (error) {
     const errEl = document.createElement("p");
     errEl.textContent = "Could not load profile.";
@@ -102,11 +110,10 @@ if (!loadToken()) {
   toggleDesktopMenu.innerHTML = `<a
             href="./login.html"
             class="px-6 py-4 hover:bg-gray-200 block"
-            ><i class="fa-regular fa-right-to-bracket mr-2"></i></i>Login / Register</a
+            ><i class="fa-regular fa-right-to-bracket mr-2"></i>Login / Register</a
           >`;
 } else {
   toggleDesktopMenu.innerHTML = `<button
-            href="./profile.html"
             class="px-6 py-4 hover:bg-gray-200 block cursor-pointer"
             ><i class="fa-regular fa-user mr-2"></i>Profile</button
           >`;
