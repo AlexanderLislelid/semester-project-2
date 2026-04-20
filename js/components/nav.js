@@ -9,6 +9,9 @@ const BASE_PATH =
 const userContainer = document.getElementById("mobile-menu-profile");
 const creditsContainer = document.getElementById("credits-mobile-menu");
 const creditsContainerDesktop = document.getElementById("credits-desktop");
+const userContainderDesktop = document.getElementById(
+  "desktop-dropdown-profile",
+);
 
 function logout() {
   removeToken();
@@ -65,11 +68,16 @@ async function getUserProfile() {
     nameContainer.appendChild(emailEl);
     userContainer.appendChild(avatarEl);
     userContainer.appendChild(nameContainer);
+
+    userContainderDesktop.appendChild(nameContainer);
+    userContainderDesktop.appendChild(avatarEl);
   } catch (error) {
     const errEl = document.createElement("p");
     errEl.textContent = "Could not load profile.";
     errEl.className = "text-red-500 text-sm";
+
     userContainer.appendChild(errEl);
+    userContainderDesktop.appendChild(errEl);
   }
 }
 
@@ -89,7 +97,7 @@ toggleMobileMenu.addEventListener("click", () => {
 //toggle profile menu for desktop
 
 const toggleDesktopMenu = document.getElementById("desktop-profile-toggle");
-const desktopMenu = document.getElementById("desktop-profile-menu");
+const desktopMenu = document.getElementById("desktop-dropdown");
 if (!loadToken()) {
   toggleDesktopMenu.innerHTML = `<a
             href="./login.html"
@@ -104,7 +112,6 @@ if (!loadToken()) {
           >`;
   toggleDesktopMenu.addEventListener("click", () => {
     desktopMenu.classList.toggle("hidden");
-    console.log("add desktop profile dropdown!");
   });
 }
 
