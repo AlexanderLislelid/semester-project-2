@@ -17,3 +17,7 @@ export function saveUser(user) {
 export function loadUser() {
   return JSON.parse(localStorage.getItem("user"));
 }
+
+export function removeUser() {
+  localStorage.removeItem("user");
+}

@@ -25,6 +25,12 @@
   /* success: green-500 */
   /* success border: green-500/50 */
   /* success bg: green-500/20 */
+
+  --text-2xs: 10px;
+}
+
+.btn-primary {
+  @apply;
 }
 
 @layer base {

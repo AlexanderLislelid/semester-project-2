@@ -7,15 +7,84 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/ef4bd31f38.js"
+      crossorigin="anonymous"
+    ></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/components/nav.js" type="module"></script>
   </head>
-  <body>
-    <h1 class="text-6xl font-heading">Hei</h1>
-    <p class="bg-teal-500 font-sans text-5xl">
-      testing to see if tailwind is active
-    </p>
+  <body class="min-h-screen flex flex-col bg-background">
+    <nav
+      id="nav-mobile"
+      class="sm:hidden flex items-center justify-between border-b border-edges"
+    >
+      <div id="logo" class="leading-1 px-2 pb-2">
+        <p class="text-2xl tracking-wider font-heading">GAVEL</p>
+        <p class="text-2xs text-text-secondary text-center">AUCTION HOUSE</p>
+      </div>
+      <button id="nav-mobile-toggle" class="bg-teal-600 text-white px-4 py-3">
+        <i class="fa-solid fa-angle-down text-xl"></i>
+      </button>
+    </nav>
+    <div id="nav-mobile-menu" class="absolute top-12 h-10 w-full hidden">
+      <div
+        id="mobile-menu-profile"
+        class="px-6 py-4 flex items-center text-end border-b-edges border-b justify-between gap-6"
+      ></div>
+      <ul>
+        <a href="./index.html"
+          ><li
+            class="border-l-8 border-teal-600 py-3 font-semibold border-b-edges border-b bg-gray-200"
+          >
+            <i class="fa-regular fa-house mx-4 text-xl"></i>Home
+          </li>
+        </a>
+        <a href="./pages/create-listing.html"
+          ><li class="py-3 border-b-edges border-b">
+            <i class="fa-regular fa-plus ml-6 mr-4 text-xl"></i>Create
+          </li>
+        </a>
+        <a href="./pages/profile.html"
+          ><li class="py-3 border-b-edges border-b">
+            <i class="fa-regular fa-user ml-6 mr-4 text-xl"></i>My Profile
+          </li>
+        </a>
+        <a href="./pages/edit-profile.html"
+          ><li class="py-3 border-b-edges border-b">
+            <i class="fa-regular fa-user-pen ml-6 mr-4 text-xl"></i>Edit Profile
+          </li>
+        </a>
+        <a href="./pages/profile.html"
+          ><li class="py-3 border-b-edges border-b">
+            <i class="fa-regular fa-gavel ml-6 mr-4 text-xl"></i>My bids
+          </li>
+        </a>
+      </ul>
+      <div id="logout-menu" class="bg-dark-bg flex-flex-col p-6 text-white">
+        <div class="flex justify-between">
+          <p class="font-light">Credits</p>
+          <span
+            id="credits"
+            class="text-bold flex gap-2 items-center px-4 bg-dark-highlights py-1 rounded-full"
+            ><i class="fa-regular fa-coins text-teal-500 text-xl"></i>999</span
+          >
+        </div>
+        <button
+          id="logout"
+          class="text-center w-full mt-6 py-2 bg-dark-highlights rounded-md cursor-pointer"
+        >
+          <i class="fa-regular fa-arrow-left-from-bracket mr-2"></i>
+          Logout
+        </button>
+      </div>
+    </div>
+    <div id="nav-mobile-container"></div>
+    <nav id="nav-desktop" class="hidden sm:flex">Nav Desktop</nav>
+    <main class="flex-1"></main>
+    <footer>sdsad</footer>
   </body>
 </html>
