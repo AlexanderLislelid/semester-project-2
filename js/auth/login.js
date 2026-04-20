@@ -14,7 +14,7 @@ form.addEventListener("submit", async (e) => {
 
     saveToken(data.data.accessToken);
     saveUser(data.data);
-    window.location.href = "../index.html";
+    window.location.href = "./index.html";
   } catch (error) {
     alert(error.message);
   }

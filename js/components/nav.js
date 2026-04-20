@@ -10,7 +10,7 @@ if (logoutBtn) {
   logoutBtn.addEventListener("click", () => {
     removeToken();
     removeUser();
-    window.location.href = "/pages/login.html";
+    window.location.href = "/login.html";
   });
 }
 
@@ -84,13 +84,13 @@ const toggleDesktopMenu = document.getElementById("desktop-profile-toggle");
 const desktopMenu = document.getElementById("desktop-profile-menu");
 if (!loadToken()) {
   toggleDesktopMenu.innerHTML = `<a
-            href="./pages/login.html"
+            href="./login.html"
             class="px-6 py-4 hover:bg-gray-200 block"
             ><i class="fa-regular fa-right-to-bracket mr-2"></i></i>Login / Register</a
           >`;
 } else {
   toggleDesktopMenu.innerHTML = `<button
-            href="./pages/profile.html"
+            href="./profile.html"
             class="px-6 py-4 hover:bg-gray-200 block cursor-pointer"
             ><i class="fa-regular fa-user mr-2"></i>Profile</button
           >`;
@@ -114,7 +114,7 @@ if (!loadToken()) {
     "text-center mx-auto py-2 bg-teal-600 rounded-md px-5 text-white border border-edges cursor-pointer text-sm hover:bg-teal-700";
 
   loginBtn.addEventListener("click", () => {
-    window.location.href = "/pages/login.html";
+    window.location.href = "/login.html";
   });
 
   userContainer.appendChild(loginBtn);
