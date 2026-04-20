@@ -60,7 +60,7 @@ async function getUserProfile() {
       creditsContainer.innerHTML = "";
     } else {
       creditsContainer.innerHTML = `<i class="fa-regular fa-coins text-teal-500 text-xl"></i>${credits}`;
-      creditsContainerDesktop.className = "px-6 py-4 bg-teal-600 text-white";
+      creditsContainerDesktop.className = "px-2 py-4  bg-teal-600 text-white";
       creditsContainerDesktop.innerHTML = `<i class="fa-regular fa-coins mr-2"></i>${credits}`;
     }
 
@@ -112,6 +112,16 @@ if (!loadToken()) {
           >`;
   toggleDesktopMenu.addEventListener("click", () => {
     desktopMenu.classList.toggle("hidden");
+  });
+
+  //click outside menu to toggle hidden
+  document.body.addEventListener("click", (e) => {
+    if (
+      !desktopMenu.contains(e.target) &&
+      !toggleDesktopMenu.contains(e.target)
+    ) {
+      desktopMenu.classList.add("hidden");
+    }
   });
 }
 
