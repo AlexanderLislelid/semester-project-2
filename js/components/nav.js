@@ -75,7 +75,11 @@ if (!loadToken()) {
 
   loginBtn.textContent = "Login / Register";
   loginBtn.className =
-    "text-center mx-auto py-2 bg-teal-600 rounded-md text-white";
+    "text-center mx-auto py-2 bg-teal-600 rounded-md px-5 text-white border border-edges cursor-pointer text-sm hover:bg-teal-700";
+
+  loginBtn.addEventListener("click", () => {
+    window.location.href = "/pages/login.html";
+  });
 
   userContainer.appendChild(loginBtn);
 } else {
