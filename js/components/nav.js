@@ -10,14 +10,17 @@ const userContainer = document.getElementById("mobile-menu-profile");
 const creditsContainer = document.getElementById("credits-mobile-menu");
 const creditsContainerDesktop = document.getElementById("credits-desktop");
 
-const logoutBtn = document.getElementById("logout");
-if (logoutBtn) {
-  logoutBtn.addEventListener("click", () => {
-    removeToken();
-    removeUser();
-    window.location.href = `${BASE_PATH}/login.html`;
-  });
+function logout() {
+  removeToken();
+  removeUser();
+  window.location.href = `${BASE_PATH}/login.html`;
 }
+
+const logoutBtn = document.getElementById("logout");
+if (logoutBtn) logoutBtn.addEventListener("click", logout);
+
+const logoutBtnDesktop = document.getElementById("logout-desktop");
+if (logoutBtnDesktop) logoutBtnDesktop.addEventListener("click", logout);
 
 async function getUserProfile() {
   const storedUser = localStorage.getItem("user");
