@@ -1,6 +1,11 @@
 import { loadToken, removeToken, removeUser } from "../utils/storage.js";
 import { get } from "../api/apiClient.js";
 
+const BASE_PATH =
+  window.location.hostname === "alexanderlislelid.github.io"
+    ? "/semester-project-2"
+    : "";
+
 const userContainer = document.getElementById("mobile-menu-profile");
 const creditsContainer = document.getElementById("credits-mobile-menu");
 const creditsContainerDesktop = document.getElementById("credits-desktop");
@@ -10,7 +15,7 @@ if (logoutBtn) {
   logoutBtn.addEventListener("click", () => {
     removeToken();
     removeUser();
-    window.location.href = "/login.html";
+    window.location.href = `${BASE_PATH}/login.html`;
   });
 }
 
@@ -114,7 +119,7 @@ if (!loadToken()) {
     "text-center mx-auto py-2 bg-teal-600 rounded-md px-5 text-white border border-edges cursor-pointer text-sm hover:bg-teal-700";
 
   loginBtn.addEventListener("click", () => {
-    window.location.href = "/login.html";
+    window.location.href = `${BASE_PATH}/login.html`;
   });
 
   userContainer.appendChild(loginBtn);
