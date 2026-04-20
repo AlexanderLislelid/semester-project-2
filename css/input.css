@@ -29,9 +29,6 @@
   --text-2xs: 10px;
 }
 
-.btn-primary {
-  @apply;
-}
 
 @layer base {
   body {
