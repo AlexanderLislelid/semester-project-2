@@ -2,7 +2,8 @@ import { loadToken, removeToken, removeUser } from "../utils/storage.js";
 import { get } from "../api/apiClient.js";
 
 const userContainer = document.getElementById("mobile-menu-profile");
-const creditsContainer = document.getElementById("credits");
+const creditsContainer = document.getElementById("credits-mobile-menu");
+const creditsContainerDesktop = document.getElementById("credits-desktop");
 
 const logoutBtn = document.getElementById("logout");
 if (logoutBtn) {
@@ -40,6 +41,18 @@ async function getUserProfile() {
     nameEl.textContent = name;
     emailEl.textContent = email;
 
+    // show / hide credits on desktop nav
+
+    creditsContainer.innerHTML = `<i class="fa-regular fa-coins text-teal-500 text-xl"></i
+          >${credits}`;
+    if (!loadToken()) {
+      creditsContainer.innerHTML = "";
+    } else {
+      creditsContainer.innerHTML = `<i class="fa-regular fa-coins text-teal-500 text-xl"></i>${credits}`;
+      creditsContainerDesktop.className = "px-6 py-4 bg-teal-600 text-white";
+      creditsContainerDesktop.innerHTML = `<i class="fa-regular fa-coins mr-2"></i>${credits}`;
+    }
+
     nameContainer.appendChild(nameEl);
     nameContainer.appendChild(emailEl);
     userContainer.appendChild(avatarEl);
@@ -65,6 +78,23 @@ toggleMobileMenu.addEventListener("click", () => {
   toggleMobileMenu.setAttribute("aria-expanded", !isHidden);
 });
 
+//toggle profile menu for desktop
+
+const toggleDesktopMenu = document.getElementById("desktop-profile-menu");
+if (!loadToken()) {
+  toggleDesktopMenu.innerHTML = `<a
+            href="./pages/login.html"
+            class="px-6 py-4 hover:bg-gray-200 block"
+            ><i class="fa-regular fa-right-to-bracket mr-2"></i></i>Login / Register</a
+          >`;
+} else {
+  toggleDesktopMenu.innerHTML = `<a
+            href="./pages/profile.html"
+            class="px-6 py-4 hover:bg-gray-200 block"
+            ><i class="fa-regular fa-user mr-2"></i>Profile</a
+          >`;
+}
+
 // toggle profile info / login/reg button based on access token in localstorage
 
 const logoutMenu = document.getElementById("logout-menu");
@@ -72,6 +102,7 @@ const logoutMenu = document.getElementById("logout-menu");
 if (!loadToken()) {
   const loginBtn = document.createElement("button");
   logoutMenu.classList.add("hidden");
+  creditsContainerDesktop.className = "";
 
   loginBtn.textContent = "Login / Register";
   loginBtn.className =

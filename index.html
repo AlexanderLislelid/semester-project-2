@@ -22,9 +22,11 @@
       id="nav-mobile"
       class="sm:hidden flex items-center justify-between border-b border-edges"
     >
-      <div id="logo" class="leading-1 px-2 pb-2">
-        <p class="text-2xl tracking-wider font-heading">GAVEL</p>
-        <p class="text-2xs text-text-secondary text-center">AUCTION HOUSE</p>
+      <div class="leading-1 px-2 pb-2">
+        <a href="./index.html">
+          <p class="text-2xl tracking-wider font-heading">GAVEL</p>
+          <p class="text-2xs text-text-secondary text-center">AUCTION HOUSE</p>
+        </a>
       </div>
       <button id="nav-mobile-toggle" class="bg-teal-600 text-white px-4 py-3">
         <i class="fa-solid fa-angle-down text-xl"></i>
@@ -68,10 +70,10 @@
         <div class="flex justify-between">
           <p class="font-light">Credits</p>
           <span
-            id="credits"
+            id="credits-mobile-menu"
             class="text-bold flex gap-2 items-center px-4 bg-dark-highlights py-1 rounded-full"
-            ><i class="fa-regular fa-coins text-teal-500 text-xl"></i>999</span
-          >
+            ><i class="fa-regular fa-coins text-teal-500 text-xl"></i
+          ></span>
         </div>
         <button
           id="logout"
@@ -83,7 +85,39 @@
       </div>
     </div>
     <div id="nav-mobile-container"></div>
-    <nav id="nav-desktop" class="hidden sm:flex">Nav Desktop</nav>
+    <nav
+      id="nav-desktop"
+      class="hidden sm:flex border-b border-edges justify-between items-center"
+    >
+      <div class="px-2">
+        <a href="./index.html">
+          <p class="text-3xl tracking-wider font-heading leading-8">GAVEL</p>
+          <p class="text-xs text-text-secondary text-center">AUCTION HOUSE</p>
+        </a>
+      </div>
+      <ul class="flex items-center">
+        <li>
+          <a href="./index.html" class="px-6 py-4 hover:bg-gray-200 block"
+            ><i class="fa-regular fa-house mr-2"></i>Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="./pages/create-listing.html"
+            class="px-6 py-4 hover:bg-gray-200 block"
+            ><i class="fa-regular fa-plus mr-2"></i>Create</a
+          >
+        </li>
+        <li id="credits-desktop"></li>
+        <button id="desktop-profile-menu">
+          <a
+            href="./pages/profile.html"
+            class="px-6 py-4 hover:bg-gray-200 block"
+            ><i class="fa-regular fa-user mr-2"></i>Profile</a
+          >
+        </button>
+      </ul>
+    </nav>
     <main class="flex-1"></main>
     <footer>sdsad</footer>
   </body>
