@@ -28,8 +28,8 @@
           <p class="text-2xs text-text-secondary text-center">AUCTION HOUSE</p>
         </a>
       </div>
-      <button id="nav-mobile-toggle" class="bg-teal-600 text-white px-4 py-3">
-        <i class="fa-solid fa-angle-down text-xl"></i>
+      <button id="nav-mobile-toggle" class="bg-teal-600 text-white px-4 py-3" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i class="fa-solid fa-angle-down text-xl" aria-hidden="true"></i>
       </button>
     </nav>
     <div id="nav-mobile-menu" class="absolute top-12 h-10 w-full hidden">
@@ -112,11 +112,7 @@
           >
         </li>
 
-        <button id="desktop-profile-toggle">
-          <a href="./profile.html" class="px-6 py-4 hover:bg-gray-200 block"
-            ><i class="fa-regular fa-user mr-2"></i>Profile</a
-          >
-        </button>
+        <div id="desktop-profile-toggle"></div>
         <li id="credits-desktop"></li>
       </ul>
     </nav>

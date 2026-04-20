@@ -115,10 +115,14 @@ if (!loadToken()) {
 } else {
   toggleDesktopMenu.innerHTML = `<button
             class="px-6 py-4 hover:bg-gray-200 block cursor-pointer"
-            ><i class="fa-regular fa-user mr-2"></i>Profile</button
+            aria-label="Toggle profile menu"
+            aria-expanded="false"
+            ><i class="fa-regular fa-user mr-2" aria-hidden="true"></i>Profile</button
           >`;
+  const desktopBtn = toggleDesktopMenu.querySelector("button");
   toggleDesktopMenu.addEventListener("click", () => {
-    desktopMenu.classList.toggle("hidden");
+    const isHidden = desktopMenu.classList.toggle("hidden");
+    desktopBtn.setAttribute("aria-expanded", !isHidden);
   });
 
   //click outside menu to toggle hidden
