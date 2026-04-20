@@ -80,7 +80,8 @@ toggleMobileMenu.addEventListener("click", () => {
 
 //toggle profile menu for desktop
 
-const toggleDesktopMenu = document.getElementById("desktop-profile-menu");
+const toggleDesktopMenu = document.getElementById("desktop-profile-toggle");
+const desktopMenu = document.getElementById("desktop-profile-menu");
 if (!loadToken()) {
   toggleDesktopMenu.innerHTML = `<a
             href="./pages/login.html"
@@ -88,11 +89,15 @@ if (!loadToken()) {
             ><i class="fa-regular fa-right-to-bracket mr-2"></i></i>Login / Register</a
           >`;
 } else {
-  toggleDesktopMenu.innerHTML = `<a
+  toggleDesktopMenu.innerHTML = `<button
             href="./pages/profile.html"
-            class="px-6 py-4 hover:bg-gray-200 block"
-            ><i class="fa-regular fa-user mr-2"></i>Profile</a
+            class="px-6 py-4 hover:bg-gray-200 block cursor-pointer"
+            ><i class="fa-regular fa-user mr-2"></i>Profile</button
           >`;
+  toggleDesktopMenu.addEventListener("click", () => {
+    desktopMenu.classList.toggle("hidden");
+    console.log("add desktop profile dropdown!");
+  });
 }
 
 // toggle profile info / login/reg button based on access token in localstorage
