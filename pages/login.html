@@ -3,17 +3,111 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/ef4bd31f38.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Login</title>
     <link rel="stylesheet" href="../css/style.css" />
     <script type="module" src="../js/auth/login.js"></script>
   </head>
-  <body>
-    <form id="login-form" class="flex flex-col mx-auto max-w-xl mt-36 max-h-36">
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" class="border" />
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" class="border" />
-      <button type="submit" class="my-2 cursor-pointer">Log in</button>
-    </form>
+  <body class="bg-background flex min-h-screen">
+    <div class="flex flex-col md:flex-row w-full max-w-5xl mx-auto md:my-auto">
+      <div class="bg-dark-bg text-white p-10 flex flex-col">
+        <h1 class="font-heading text-4xl leading-12 font-extralight">
+          Welcome back. <br />
+          Ready to bid?
+        </h1>
+        <p class="font-light text-sm mt-4 text-text-muted">
+          Sign in to place bids, view a multitude of different auctions, and
+          manage the items you've listed for sale.
+        </p>
+        <div
+          class="hidden md:flex text-white mt-14 font-light md:flex-col justify-between flex-1"
+        >
+          <p class="border-l-8 border-teal-600 pl-8 italic block">
+            "Found a mid-century lamp I'd been chasing for years. Easiest bid
+            I've ever placed."
+          </p>
+          <div class="text-sm flex gap-2 items-center">
+            <p>New here?</p>
+            <span class="text-lg text-teal-600">•</span>
+            <a href="./register.html" class="hover:text-teal-600 underline"
+              >Create an account</a
+            >
+          </div>
+        </div>
+      </div>
+      <form
+        id="login-form"
+        class="flex flex-col bg-card p-6 sm:p-10 gap-8 md:w-full"
+      >
+        <div>
+          <h2 class="font-heading text-2xl">Log in</h2>
+          <p class="font-light">Enter your details to continue</p>
+        </div>
+        <div class="flex flex-col">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            class="inputs placeholder:text-sm"
+            placeholder="you@stud.noroff.no"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="password">Password</label>
+          <input
+            class="inputs"
+            type="password"
+            name="password"
+            id="password"
+            required
+            placeholder="••••••••"
+          />
+        </div>
+        <div
+          id="error-wrapper"
+          class="text-red-500 px-2 py-1 border border-red-500/50 bg-red-500/20 hidden rounded-md"
+        ></div>
+        <div class="flex justify-between gap-2">
+          <div class="flex gap-2">
+            <input type="checkbox" name="remember-me" id="remember-me" />
+            <p class="font-light">Remember me</p>
+          </div>
+          <p class="text-teal-700 font-light">Forgot password?</p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <button
+            type="submit"
+            class="my-2 cursor-pointer bg-teal-600 hover:bg-teal-700 text-white py-2 rounded-md"
+          >
+            Log in
+          </button>
+          <div class="flex items-center gap-4 text-xs text-text-muted">
+            <div class="h-px flex-1 bg-edges"></div>
+            <p class="text-lg font-light">or</p>
+            <div class="h-px flex-1 bg-edges"></div>
+          </div>
+          <a
+            href="../index.html"
+            class="mt-2 bg-dark-bg text-center hover:bg-black text-white py-2 rounded-md"
+            >Continue as Guest</a
+          >
+        </div>
+        <div class="flex justify-center gap-2 mt-8">
+          <p class="font-light text-text-secondary">Don't have an account?</p>
+          <a href="./register.html" class="text-teal-700">Register</a>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

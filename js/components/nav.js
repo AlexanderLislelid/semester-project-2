@@ -89,7 +89,7 @@ async function getUserProfile() {
   }
 }
 
-//toggle nav logic for smaller screens
+//toggle nav for smaller screens
 
 const toggleMobileMenu = document.getElementById("nav-mobile-toggle");
 const subMenu = document.getElementById("nav-mobile-menu");

@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-/* Custom values */
-
 @theme {
   --font-sans: "Roboto", system-ui, sans-serif;
   --font-heading: "Playfair Display", Georgia, serif;
@@ -29,6 +27,9 @@
   --text-2xs: 10px;
 }
 
+.inputs {
+  @apply border border-edges rounded-md px-4 py-1 bg-background hover:border-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-600;
+}
 
 @layer base {
   body {
