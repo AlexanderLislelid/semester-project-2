@@ -1,4 +1,5 @@
 import { post } from "../api/apiClient.js";
+import { showSuccessToastRegister } from "../components/toasts.js";
 
 const form = document.getElementById("registration-form");
 const errorWrapper = document.getElementById("error-wrapper");
@@ -20,8 +21,11 @@ form.addEventListener("submit", async (e) => {
       email: form.email.value,
       password: form.password.value,
     });
-
-    window.location.href = "./login.html";
+    showSuccessToastRegister();
+    errorWrapper.classList.add("hidden");
+    setTimeout(() => {
+      window.location.href = "./login.html";
+    }, 2000);
   } catch (error) {
     errorWrapper.append(error.message);
     errorWrapper.classList.remove("hidden");

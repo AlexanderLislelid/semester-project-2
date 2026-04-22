@@ -1,6 +1,6 @@
 import { post } from "../api/apiClient.js";
 import { saveToken, saveUser } from "../utils/storage.js";
-import { showSuccessToast } from "../components/toasts.js";
+import { showSuccessToastLogin } from "../components/toasts.js";
 
 const form = document.getElementById("login-form");
 const errorWrapper = document.getElementById("error-wrapper");
@@ -17,7 +17,7 @@ form.addEventListener("submit", async (e) => {
 
     saveToken(data.data.accessToken);
     saveUser(data.data);
-    showSuccessToast();
+    showSuccessToastLogin();
     errorWrapper.classList.add("hidden");
     setTimeout(() => {
       window.location.href = "../index.html";
