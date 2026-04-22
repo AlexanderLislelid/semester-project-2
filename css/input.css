@@ -31,6 +31,10 @@
   @apply border border-edges rounded-md px-4 py-1 bg-background hover:border-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-600;
 }
 
+.btn-primary {
+  @apply my-2 cursor-pointer bg-teal-600 hover:bg-teal-700 text-white py-2 rounded-md;
+}
+
 @layer base {
   body {
     font-family: var(--font-sans);
