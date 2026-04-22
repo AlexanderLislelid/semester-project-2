@@ -18,6 +18,7 @@ form.addEventListener("submit", async (e) => {
     saveToken(data.data.accessToken);
     saveUser(data.data);
     showSuccessToast();
+    errorWrapper.classList.add("hidden");
     setTimeout(() => {
       window.location.href = "../index.html";
     }, 2000);
