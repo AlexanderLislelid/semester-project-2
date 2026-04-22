@@ -13,26 +13,26 @@
   --color-dark-bg: #262626; /* Footer, hero bg */
   --color-text-secondary: #888888;
   --color-dark-highlights: #484848;
+  --color-dark-btn: #131313;
 
   /* Accent: Use these standard tailwind colors */
-  /* light: teal-500 */
-  /* primary: teal-600 / hover: teal-700 */
-  /* danger: red-500 */
-  /* danger border: red-500/50 */
-  /* danger bg: red-500/20 */
-  /* success: green-500 */
-  /* success border: green-500/50 */
-  /* success bg: green-500/20 */
-
+  /* light: teal-500 */ /* primary: teal-600 / hover: teal-700 */
+  /* danger: red-500 */ /* danger border: red-500/50 */
+  /* danger bg: red-500/20 */ /* success: green-500 */
+  /* success border: green-500/50 */ /* success bg: green-500/20 */
   --text-2xs: 10px;
 }
 
 .inputs {
-  @apply border border-edges rounded-md px-4 py-1 bg-background hover:border-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-600;
+  @apply border-edges bg-background rounded-md border px-4 py-1 hover:border-teal-600 focus:ring-2 focus:ring-teal-600 focus:outline-none;
 }
 
 .btn-primary {
-  @apply my-2 cursor-pointer bg-teal-600 hover:bg-teal-700 text-white py-2 rounded-md;
+  @apply my-2 cursor-pointer rounded-md bg-teal-600 py-2 text-white hover:bg-teal-700;
+}
+
+.btn-secondary {
+  @apply bg-dark-btn rounded-md py-2 text-center text-white hover:bg-black;
 }
 
 @layer base {
