@@ -24,20 +24,20 @@
     <script src="./js/components/nav.js" type="module"></script>
     <script src="./js/components/footer.js" defer></script>
   </head>
-  <body class="min-h-screen flex flex-col bg-background">
+  <body class="bg-background flex min-h-screen flex-col">
     <nav
       id="nav-mobile"
-      class="sm:hidden flex items-center justify-between border-b border-edges"
+      class="border-edges flex items-center justify-between border-b sm:hidden"
     >
-      <div class="leading-1 px-2 pb-2">
+      <div class="px-2 pb-2 leading-1">
         <a href="./index.html">
-          <p class="text-2xl tracking-wider font-heading">GAVEL</p>
+          <p class="font-heading text-2xl tracking-wider">GAVEL</p>
           <p class="text-2xs text-text-secondary text-center">AUCTION HOUSE</p>
         </a>
       </div>
       <button
         id="nav-mobile-toggle"
-        class="bg-teal-600 text-white px-4 py-3"
+        class="bg-teal-600 px-4 py-3 text-white"
         aria-label="Toggle navigation menu"
         aria-expanded="false"
       >
@@ -46,17 +46,17 @@
     </nav>
     <div
       id="nav-mobile-menu"
-      class="absolute top-12.5 w-full hidden z-50 bg-background"
+      class="bg-background absolute top-12.5 z-50 hidden w-full"
     >
       <div
         id="mobile-menu-profile"
-        class="px-6 py-4 flex items-center text-end border-b-edges border-b justify-between gap-6"
+        class="border-b-edges flex items-center justify-between gap-6 border-b px-6 py-4 text-end"
       ></div>
       <ul>
         <li>
           <a
             href="./index.html"
-            class="block border-l-8 border-teal-600 py-3 font-semibold border-b-edges border-b bg-gray-200"
+            class="border-b-edges block border-b border-l-8 border-teal-600 bg-gray-200 py-3 font-semibold"
           >
             <i class="fa-regular fa-house mx-4 text-xl" aria-hidden="true"></i
             >Home
@@ -65,10 +65,10 @@
         <li>
           <a
             href="./pages/create-listing.html"
-            class="block py-3 border-b-edges border-b hover:bg-gray-200"
+            class="border-b-edges block border-b py-3 hover:bg-gray-200"
           >
             <i
-              class="fa-regular fa-plus ml-6 mr-4 text-xl"
+              class="fa-regular fa-plus mr-4 ml-6 text-xl"
               aria-hidden="true"
             ></i
             >Create
@@ -77,10 +77,10 @@
         <li>
           <a
             href="./pages/profile.html"
-            class="block py-3 border-b-edges border-b hover:bg-gray-200"
+            class="border-b-edges block border-b py-3 hover:bg-gray-200"
           >
             <i
-              class="fa-regular fa-user ml-6 mr-4 text-xl"
+              class="fa-regular fa-user mr-4 ml-6 text-xl"
               aria-hidden="true"
             ></i
             >My Profile
@@ -89,10 +89,10 @@
         <li>
           <a
             href="./pages/edit-profile.html"
-            class="block py-3 border-b-edges border-b hover:bg-gray-200"
+            class="border-b-edges block border-b py-3 hover:bg-gray-200"
           >
             <i
-              class="fa-regular fa-user-pen ml-6 mr-4 text-xl"
+              class="fa-regular fa-user-pen mr-4 ml-6 text-xl"
               aria-hidden="true"
             ></i
             >Edit Profile
@@ -101,10 +101,10 @@
         <li>
           <a
             href="./pages/profile.html"
-            class="block py-3 border-b-edges border-b hover:bg-gray-200"
+            class="border-b-edges block border-b py-3 hover:bg-gray-200"
           >
             <i
-              class="fa-regular fa-gavel ml-6 mr-4 text-xl"
+              class="fa-regular fa-gavel mr-4 ml-6 text-xl"
               aria-hidden="true"
             ></i
             >My Bids
@@ -113,10 +113,10 @@
         <li>
           <a
             href="./pages/profile.html"
-            class="block py-3 border-b-edges border-b hover:bg-gray-200"
+            class="border-b-edges block border-b py-3 hover:bg-gray-200"
           >
             <i
-              class="fa-regular fa-tag ml-6 mr-4 text-xl"
+              class="fa-regular fa-tag mr-4 ml-6 text-xl"
               aria-hidden="true"
             ></i
             >My Listings
@@ -128,16 +128,16 @@
           <p class="font-light">Credits</p>
           <span
             id="credits-mobile-menu"
-            class="text-bold flex gap-2 items-center px-4 bg-dark-highlights py-1 rounded-full"
+            class="text-bold bg-dark-highlights flex items-center gap-2 rounded-full px-4 py-1"
             ><i
-              class="fa-regular fa-coins text-teal-500 text-xl"
+              class="fa-regular fa-coins text-xl text-teal-500"
               aria-hidden="true"
             ></i
           ></span>
         </div>
         <button
           id="logout"
-          class="text-center w-full mt-6 py-2 bg-dark-highlights rounded-md cursor-pointer hover:border hover:border-gray-500"
+          class="bg-dark-highlights mt-6 w-full cursor-pointer rounded-md py-2 text-center hover:border hover:border-gray-500"
         >
           <i
             class="fa-regular fa-arrow-left-from-bracket mr-2"
@@ -150,24 +150,24 @@
     <div id="nav-mobile-container"></div>
     <nav
       id="nav-desktop"
-      class="hidden sm:flex border-b border-edges justify-between items-center"
+      class="border-edges hidden items-center justify-between border-b sm:flex"
     >
       <div class="px-2">
         <a href="./index.html">
-          <p class="text-3xl tracking-wider font-heading leading-8">GAVEL</p>
-          <p class="text-xs text-text-secondary text-center">AUCTION HOUSE</p>
+          <p class="font-heading text-3xl leading-8 tracking-wider">GAVEL</p>
+          <p class="text-text-secondary text-center text-xs">AUCTION HOUSE</p>
         </a>
       </div>
       <ul class="flex items-center">
         <li>
-          <a href="./index.html" class="px-6 py-4 hover:bg-gray-200 block"
+          <a href="./index.html" class="block px-6 py-4 hover:bg-gray-200"
             ><i class="fa-regular fa-house mr-2" aria-hidden="true"></i>Home</a
           >
         </li>
         <li>
           <a
             href="./pages/create-listing.html"
-            class="px-6 py-4 hover:bg-gray-200 block"
+            class="block px-6 py-4 hover:bg-gray-200"
             ><i class="fa-regular fa-plus mr-2" aria-hidden="true"></i>Create</a
           >
         </li>
@@ -178,20 +178,20 @@
     </nav>
     <div
       id="desktop-dropdown"
-      class="absolute top-14.5 right-0 w-84 hidden z-50 bg-background"
+      class="bg-background absolute top-14.5 right-0 z-50 hidden w-84"
     >
       <div
         id="desktop-dropdown-profile"
-        class="px-6 py-4 flex items-center border-b-edges border-b justify-between"
+        class="border-b-edges flex items-center justify-between border-b px-6 py-4"
       ></div>
       <ul>
         <li>
           <a
             href="./pages/profile.html"
-            class="block py-3 border-b-edges border-b hover:bg-gray-200 hover:border-l-8 hover:border-teal-600"
+            class="border-b-edges block border-b py-3 hover:border-l-8 hover:border-teal-600 hover:bg-gray-200"
           >
             <i
-              class="fa-regular fa-user ml-6 mr-4 text-xl"
+              class="fa-regular fa-user mr-4 ml-6 text-xl"
               aria-hidden="true"
             ></i
             >My Profile
@@ -200,10 +200,10 @@
         <li>
           <a
             href="./pages/edit-profile.html"
-            class="block py-3 border-b-edges border-b hover:bg-gray-200 hover:border-l-8 hover:border-teal-600"
+            class="border-b-edges block border-b py-3 hover:border-l-8 hover:border-teal-600 hover:bg-gray-200"
           >
             <i
-              class="fa-regular fa-user-pen ml-6 mr-4 text-xl"
+              class="fa-regular fa-user-pen mr-4 ml-6 text-xl"
               aria-hidden="true"
             ></i
             >Edit Profile
@@ -212,10 +212,10 @@
         <li>
           <a
             href="./pages/profile.html"
-            class="block py-3 border-b-edges border-b hover:bg-gray-200 hover:border-l-8 hover:border-teal-600"
+            class="border-b-edges block border-b py-3 hover:border-l-8 hover:border-teal-600 hover:bg-gray-200"
           >
             <i
-              class="fa-regular fa-gavel ml-6 mr-4 text-xl"
+              class="fa-regular fa-gavel mr-4 ml-6 text-xl"
               aria-hidden="true"
             ></i
             >My bids
@@ -224,10 +224,10 @@
         <li>
           <a
             href="./pages/profile.html"
-            class="block py-3 border-b-edges border-b hover:bg-gray-200 hover:border-l-8 hover:border-teal-600"
+            class="border-b-edges block border-b py-3 hover:border-l-8 hover:border-teal-600 hover:bg-gray-200"
           >
             <i
-              class="fa-regular fa-tag ml-6 mr-4 text-xl"
+              class="fa-regular fa-tag mr-4 ml-6 text-xl"
               aria-hidden="true"
             ></i
             >My Listings
@@ -241,7 +241,7 @@
         <div class="flex justify-between"></div>
         <button
           id="logout-desktop"
-          class="text-center w-full mt-6 py-2 bg-dark-highlights rounded-md cursor-pointer hover:border hover:border-gray-500"
+          class="bg-dark-highlights mt-6 w-full cursor-pointer rounded-md py-2 text-center hover:border hover:border-gray-500"
         >
           <i
             class="fa-regular fa-arrow-left-from-bracket mr-2"
