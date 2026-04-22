@@ -16,7 +16,7 @@ const userContainderDesktop = document.getElementById(
 function logout() {
   removeToken();
   removeUser();
-  window.location.href = `${BASE_PATH}/login.html`;
+  window.location.href = `${BASE_PATH}/pages/login.html`;
 }
 
 const logoutBtn = document.getElementById("logout");
@@ -108,7 +108,7 @@ const toggleDesktopMenu = document.getElementById("desktop-profile-toggle");
 const desktopMenu = document.getElementById("desktop-dropdown");
 if (!loadToken()) {
   toggleDesktopMenu.innerHTML = `<a
-            href="./login.html"
+            href="${BASE_PATH}/pages/login.html"
             class="px-6 py-4 hover:bg-gray-200 block"
             ><i class="fa-regular fa-right-to-bracket mr-2"></i>Login / Register</a
           >`;
@@ -150,7 +150,7 @@ if (!loadToken()) {
     "text-center mx-auto py-2 bg-teal-600 rounded-md px-5 text-white border border-edges cursor-pointer text-sm hover:bg-teal-700";
 
   loginBtn.addEventListener("click", () => {
-    window.location.href = `${BASE_PATH}/login.html`;
+    window.location.href = `${BASE_PATH}/pages/login.html`;
   });
 
   userContainer.appendChild(loginBtn);
