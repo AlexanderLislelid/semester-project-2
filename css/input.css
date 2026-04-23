@@ -13,7 +13,7 @@
   --color-dark-bg: #262626; /* Footer, hero bg */
 
   /* Background images */
-  --background-image-hero: url('../images/gavel-hero.jpg');
+  --background-image-hero: url("../images/gavel-hero-2.jpg");
   --color-text-secondary: #888888;
   --color-dark-highlights: #484848;
   --color-dark-btn: #131313;

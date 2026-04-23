@@ -49,7 +49,7 @@
     --color-edges: #dddddd;
     --color-text-muted: #aaaaaa;
     --color-dark-bg: #262626;
-    --background-image-hero: url('../images/gavel-hero.jpg');
+    --background-image-hero: url("../images/gavel-hero-2.jpg");
     --color-text-secondary: #888888;
     --color-dark-highlights: #484848;
     --color-dark-btn: #131313;
@@ -214,9 +214,6 @@
   .relative {
     position: relative;
   }
-  .inset-0 {
-    inset: calc(var(--spacing) * 0);
-  }
   .top-2 {
     top: calc(var(--spacing) * 2);
   }
@@ -303,9 +300,6 @@
   }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
-  }
-  .mb-12 {
-    margin-bottom: calc(var(--spacing) * 12);
   }
   .ml-6 {
     margin-left: calc(var(--spacing) * 6);
@@ -468,12 +462,6 @@
   .bg-background {
     background-color: var(--color-background);
   }
-  .bg-black\/50 {
-    background-color: color-mix(in srgb, #000 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
-    }
-  }
   .bg-card {
     background-color: var(--color-card);
   }
@@ -567,9 +555,6 @@
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
   }
-  .py-12 {
-    padding-block: calc(var(--spacing) * 12);
-  }
   .pt-3 {
     padding-top: calc(var(--spacing) * 3);
   }
@@ -653,9 +638,6 @@
   }
   .text-nowrap {
     text-wrap: nowrap;
-  }
-  .text-dark-highlights {
-    color: var(--color-dark-highlights);
   }
   .text-green-500 {
     color: var(--color-green-500);
@@ -821,11 +803,6 @@
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
-  .focus\:ring-teal-600 {
-    &:focus {
-      --tw-ring-color: var(--color-teal-600);
-    }
-  }
   .focus\:ring-white {
     &:focus {
       --tw-ring-color: var(--color-white);
@@ -867,11 +844,6 @@
       height: calc(var(--spacing) * 48);
     }
   }
-  .sm\:min-w-80 {
-    @media (width >= 40rem) {
-      min-width: calc(var(--spacing) * 80);
-    }
-  }
   .sm\:grid-cols-2 {
     @media (width >= 40rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -882,11 +854,6 @@
       grid-template-columns: 2fr 1fr 1fr;
     }
   }
-  .sm\:flex-row {
-    @media (width >= 40rem) {
-      flex-direction: row;
-    }
-  }
   .sm\:justify-end {
     @media (width >= 40rem) {
       justify-content: flex-end;
@@ -895,11 +862,6 @@
   .sm\:p-10 {
     @media (width >= 40rem) {
       padding: calc(var(--spacing) * 10);
-    }
-  }
-  .sm\:py-0 {
-    @media (width >= 40rem) {
-      padding-block: calc(var(--spacing) * 0);
     }
   }
   .sm\:text-4xl {
@@ -923,11 +885,6 @@
       width: 100%;
     }
   }
-  .md\:min-w-100 {
-    @media (width >= 48rem) {
-      min-width: calc(var(--spacing) * 100);
-    }
-  }
   .md\:grid-cols-3 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -941,11 +898,6 @@
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
-    }
-  }
-  .lg\:min-w-150 {
-    @media (width >= 64rem) {
-      min-width: calc(var(--spacing) * 150);
     }
   }
   .lg\:grid-cols-4 {
