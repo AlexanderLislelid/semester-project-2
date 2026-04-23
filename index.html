@@ -279,15 +279,31 @@
             <i class="fa-regular fa-magnifying-glass" aria-hidden="true"></i>
           </button>
         </form>
-        <div class="flex items-center gap-4">
-          <a href="./pages/login.html" class="btn-primary px-8">Log in</a>
-          <a href="./pages/register.html" class="btn-secondary px-8"
-            >Register</a
-          >
+        <div class="flex items-center gap-4 font-light">
+          <a href="./pages/login.html" class="btn-primary px-4">Log in</a>
+          <a href="./pages/register.html" class="btn-ghost">Register</a>
         </div>
       </div>
+      <div
+        class="bg-card border-b-edges flex items-center gap-2 border-b px-6 py-6"
+      >
+        <span class="text-text-secondary mr-2 text-sm">Sort by:</span>
+        <button id="newest-filter" class="btn-filter">
+          <i class="fa-regular fa-sparkles mr-1.5" aria-hidden="true"></i>Newest
+        </button>
+        <button id="oldest-filter" class="btn-filter">
+          <i
+            class="fa-regular fa-clock-rotate-left mr-1.5"
+            aria-hidden="true"
+          ></i
+          >Oldest
+        </button>
+        <button id="popular-filter" class="btn-filter">
+          <i class="fa-regular fa-fire mr-1.5" aria-hidden="true"></i>Popular
+        </button>
+      </div>
       <div class="flex items-center justify-between p-6">
-        <h2>All Auctions</h2>
+        <h2 id="filtered-headline">All Auctions</h2>
         <p class="text-sm" id="items"></p>
       </div>
       <div

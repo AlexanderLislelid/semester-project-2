@@ -31,11 +31,27 @@
 }
 
 .btn-primary {
-  @apply my-2 cursor-pointer rounded-md bg-teal-600 py-2 text-white hover:bg-teal-700;
+  @apply my-2 cursor-pointer rounded-md bg-teal-600/80 px-4 py-2 text-white transition hover:bg-teal-700/70;
+}
+
+.btn-filter {
+  @apply rounded-full border border-teal-600 px-4 py-1.5 text-sm transition hover:bg-teal-600 hover:text-white;
 }
 
 .btn-secondary {
   @apply bg-dark-btn rounded-md py-2 text-center text-white hover:bg-black;
+}
+
+.btn-ghost {
+  @apply my-2 cursor-pointer rounded-md bg-teal-600/20 px-4 py-2 text-white transition hover:bg-teal-700/50;
+}
+
+.filter-btn {
+  @apply border-edges bg-card text-text-secondary border hover:border-teal-500 hover:text-teal-600;
+}
+
+.active-filter {
+  @apply border-teal-600 bg-teal-600 text-white hover:border-teal-700 hover:bg-teal-700 hover:text-white;
 }
 
 @layer base {
