@@ -11,6 +11,9 @@
   --color-edges: #dddddd;
   --color-text-muted: #aaaaaa;
   --color-dark-bg: #262626; /* Footer, hero bg */
+
+  /* Background images */
+  --background-image-hero: url('../images/gavel-hero.jpg');
   --color-text-secondary: #888888;
   --color-dark-highlights: #484848;
   --color-dark-btn: #131313;
