@@ -14,12 +14,13 @@ async function fetchAndRenderAuctions() {
     itemsCount.textContent = `Listings: ${numberOfAuctions}`;
 
     listings.forEach((listing) => {
-      const card = document.createElement("div");
+      const card = document.createElement("a");
       const title = document.createElement("h2");
       const endDate = document.createElement("p");
       const img = document.createElement("img");
       const count = document.createElement("p");
       title.textContent = listing.title;
+      card.href = `/pages/single-listing.html?id=${listing.id}`;
 
       postContainer.appendChild(card);
       card.appendChild(title);
