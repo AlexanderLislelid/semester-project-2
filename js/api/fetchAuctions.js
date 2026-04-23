@@ -10,7 +10,7 @@ const nextPageBtn = document.getElementById("next-page");
 const dynamicHealine = document.getElementById("filtered-headline");
 const newPostsBtn = document.getElementById("newest-filter");
 const oldPostsBtn = document.getElementById("oldest-filter");
-const hotPostsBtn = document.getElementById("popular-filter");
+const endPostsBtn = document.getElementById("ending-soon-filter");
 let currentSort = "newest";
 
 let currentPage = 1;
@@ -217,7 +217,7 @@ function setupSearch() {
   });
 }
 
-const filterBtns = [newPostsBtn, oldPostsBtn, hotPostsBtn];
+const filterBtns = [newPostsBtn, oldPostsBtn, endPostsBtn];
 
 function setActiveFilter(activeBtn) {
   filterBtns.forEach((btn) => btn.classList.remove("active-filter"));
@@ -242,12 +242,12 @@ oldPostsBtn.addEventListener("click", () => {
   fetchAndRenderAuctions(currentPage, currentSearch);
 });
 
-hotPostsBtn.addEventListener("click", () => {
+endPostsBtn.addEventListener("click", () => {
   currentSort = "ending-soon";
   currentPage = 1;
   postContainer.innerHTML = "";
   dynamicHealine.textContent = "Ending Soon!";
-  setActiveFilter(hotPostsBtn);
+  setActiveFilter(endPostsBtn);
   fetchAndRenderAuctions(currentPage, currentSearch);
 });
 
