@@ -101,7 +101,7 @@ async function fetchAndRenderAuctions(page, search = "") {
         });
       }
 
-      card.href = `/pages/single-listing.html?id=${listing.id}`;
+      card.href = `./pages/single-listing.html?id=${listing.id}`;
 
       //append content
       postContainer.appendChild(card);
