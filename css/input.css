@@ -23,6 +23,9 @@
   /* danger: red-500 */ /* danger border: red-500/50 */
   /* danger bg: red-500/20 */ /* success: green-500 */
   /* success border: green-500/50 */ /* success bg: green-500/20 */
+
+  --breakpoint-xs: 30rem; /* 480px */
+
   --text-2xs: 10px;
 }
 

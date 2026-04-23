@@ -120,7 +120,7 @@ async function fetchAndRenderAuctions(page, search = "") {
 
       // classes
       card.className =
-        "group rounded-md bg-card shadow-md flex flex-col hover:scale-101 relative overflow-hidden";
+        "group rounded-md bg-gray-200 shadow-md flex flex-col hover:scale-101 relative overflow-hidden";
       img.className = "rounded-t-md sm:h-48 w-full object-cover";
       textContainer.className = "px-4 py-2 capitalize";
       title.className = "text-xl font-semibold truncate";
