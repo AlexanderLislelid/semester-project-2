@@ -1,4 +1,5 @@
 import { get } from "./apiClient.js";
+import { formatMilliseconds } from "../utils/formatter.js";
 
 const itemsCount = document.getElementById("items");
 const postContainer = document.getElementById("auctions-wrapper");
@@ -28,6 +29,7 @@ async function fetchAndRenderAuctions(page) {
       const textContainer = document.createElement("div");
       const tagContainer = document.createElement("div");
       const postAuthor = document.createElement("p");
+      const timer = document.createElement("div");
 
       //display content
       title.textContent = listing.title;
@@ -41,9 +43,22 @@ async function fetchAndRenderAuctions(page) {
         img.alt = "";
       }
 
+      //countdown
+      const endsAt = new Date(listing.endsAt);
+      const now = new Date();
+      const diffMs = endsAt - now;
+      const formattedCountdown = formatMilliseconds(diffMs);
+      console.log(formattedCountdown);
+
+      if (diffMs <= 0) {
+        timer.innerHTML = `<div class="text-sm rounded-md  py-1 px-2 absolute top-38 right-2 bg-gray-500 text-white">${formattedCountdown}</div>`;
+      } else {
+        timer.innerHTML = `<div class="text-sm rounded-md py-1 px-2 absolute top-38 right-2 bg-teal-600 text-white">${formattedCountdown}</div>`;
+      }
+
       // classes
       card.className =
-        "rounded-md bg-card shadow-md flex flex-col hover:scale-105";
+        "rounded-md bg-card shadow-md flex flex-col hover:scale-105 relative overflow-hidden";
       img.className = "rounded-t-md sm:h-48 w-full object-cover";
       textContainer.className = "px-4 py-2 capitalize";
       title.className = "text-xl truncate";
@@ -66,6 +81,8 @@ async function fetchAndRenderAuctions(page) {
       textContainer.appendChild(title);
       textContainer.appendChild(tagContainer);
       textContainer.appendChild(postAuthor);
+      textContainer.appendChild(timer);
+
       card.appendChild(img);
       card.appendChild(textContainer);
     });
