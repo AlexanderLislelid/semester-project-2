@@ -7,6 +7,7 @@ const prevPageBtn = document.getElementById("prev-page");
 const nextPageBtn = document.getElementById("next-page");
 
 //filter / sorting
+const dynamicHealine = document.getElementById("filtered-headline");
 const newPostsBtn = document.getElementById("newest-filter");
 const oldPostsBtn = document.getElementById("oldest-filter");
 const hotPostsBtn = document.getElementById("popular-filter");
@@ -122,7 +123,7 @@ async function fetchAndRenderAuctions(page, search = "") {
         "group rounded-md bg-card shadow-md flex flex-col hover:scale-101 relative overflow-hidden";
       img.className = "rounded-t-md sm:h-48 w-full object-cover";
       textContainer.className = "px-4 py-2 capitalize";
-      title.className = "text-xl truncate";
+      title.className = "text-xl font-semibold truncate";
       tagContainer.className =
         "text-sm flex gap-2 truncate text-text-secondary font-regular";
       postAuthor.className = "text-xs text-end mt-4";
@@ -227,6 +228,7 @@ newPostsBtn.addEventListener("click", () => {
   currentSort = "newest";
   currentPage = 1;
   postContainer.innerHTML = "";
+  dynamicHealine.textContent = "Newest Auctions";
   setActiveFilter(newPostsBtn);
   fetchAndRenderAuctions(currentPage, currentSearch);
 });
@@ -235,6 +237,7 @@ oldPostsBtn.addEventListener("click", () => {
   currentSort = "oldest";
   currentPage = 1;
   postContainer.innerHTML = "";
+  dynamicHealine.textContent = "Oldest Auctions";
   setActiveFilter(oldPostsBtn);
   fetchAndRenderAuctions(currentPage, currentSearch);
 });
@@ -243,6 +246,7 @@ hotPostsBtn.addEventListener("click", () => {
   currentSort = "ending-soon";
   currentPage = 1;
   postContainer.innerHTML = "";
+  dynamicHealine.textContent = "Ending Soon!";
   setActiveFilter(hotPostsBtn);
   fetchAndRenderAuctions(currentPage, currentSearch);
 });
