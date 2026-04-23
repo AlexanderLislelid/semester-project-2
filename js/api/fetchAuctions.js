@@ -6,19 +6,58 @@ const postContainer = document.getElementById("auctions-wrapper");
 const prevPageBtn = document.getElementById("prev-page");
 const nextPageBtn = document.getElementById("next-page");
 
+//filter / sorting
+const newPostsBtn = document.getElementById("newest-filter");
+const oldPostsBtn = document.getElementById("oldest-filter");
+const hotPostsBtn = document.getElementById("popular-filter");
+let currentSort = "newest";
+
 let currentPage = 1;
 let currentSearch = "";
 let isFetching = false;
+
 async function fetchAndRenderAuctions(page, search = "") {
   isFetching = true;
   try {
-    let url = `auction/listings?page=${page}&limit=20&_bids=true&_seller=true&_active=true`;
+    let url;
+
     if (search) {
-      url = `auction/listings/search?q=${encodeURIComponent(search)}&page=${page}&limit=20&_bids=true&_seller=true`;
+      const params = new URLSearchParams({
+        q: search,
+        page: page,
+        limit: 20,
+        _bids: true,
+        _seller: true,
+      });
+      url = `auction/listings/search?${params.toString()}`;
+    } else {
+      let sort, sortOrder;
+      if (currentSort === "ending-soon") {
+        sort = "endsAt";
+        sortOrder = "asc";
+      } else if (currentSort === "oldest") {
+        sort = "created";
+        sortOrder = "asc";
+      } else {
+        sort = "created";
+        sortOrder = "desc";
+      }
+
+      const params = new URLSearchParams({
+        page: page,
+        limit: 20,
+        _bids: true,
+        _seller: true,
+        _active: true,
+        sort: sort,
+        sortOrder: sortOrder,
+      });
+      url = `auction/listings?${params.toString()}`;
     }
+
     const response = await get(url);
-    console.log(response.data);
     const listings = response.data;
+
     const numberOfAuctions = response.meta.totalCount;
     itemsCount.textContent = `Listings: ${numberOfAuctions}`;
 
@@ -42,7 +81,6 @@ async function fetchAndRenderAuctions(page, search = "") {
       bidCount.textContent = `Bids ${listing.bids.length}`;
       btn.textContent = "Bid on item";
 
-      //https://builtin.com/articles/javascript-get-last-element-of-array
       if (listing.bids.length > 0) {
         const icon = document.createElement("i");
         icon.className = "fa-regular fa-coins mr-1 text-lg";
@@ -178,5 +216,37 @@ function setupSearch() {
   });
 }
 
+const filterBtns = [newPostsBtn, oldPostsBtn, hotPostsBtn];
+
+function setActiveFilter(activeBtn) {
+  filterBtns.forEach((btn) => btn.classList.remove("active-filter"));
+  activeBtn.classList.add("active-filter");
+}
+
+newPostsBtn.addEventListener("click", () => {
+  currentSort = "newest";
+  currentPage = 1;
+  postContainer.innerHTML = "";
+  setActiveFilter(newPostsBtn);
+  fetchAndRenderAuctions(currentPage, currentSearch);
+});
+
+oldPostsBtn.addEventListener("click", () => {
+  currentSort = "oldest";
+  currentPage = 1;
+  postContainer.innerHTML = "";
+  setActiveFilter(oldPostsBtn);
+  fetchAndRenderAuctions(currentPage, currentSearch);
+});
+
+hotPostsBtn.addEventListener("click", () => {
+  currentSort = "ending-soon";
+  currentPage = 1;
+  postContainer.innerHTML = "";
+  setActiveFilter(hotPostsBtn);
+  fetchAndRenderAuctions(currentPage, currentSearch);
+});
+
+setActiveFilter(newPostsBtn);
 setupSearch();
 fetchAndRenderAuctions(currentPage);
