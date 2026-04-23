@@ -270,7 +270,7 @@
           </div>
         </div>
         <div
-          class="flex min-w-80 flex-col gap-6 px-6 py-12 sm:py-0 md:min-w-100 lg:min-w-150"
+          class="flex flex-col gap-6 px-6 py-12 sm:min-w-80 sm:py-0 md:min-w-100 lg:min-w-150"
         >
           <form role="search" class="flex">
             <input
@@ -298,7 +298,24 @@
         <h2>All Auctions</h2>
         <p class="text-sm" id="items"></p>
       </div>
-      <div id="auctions-wrapper"></div>
+      <div
+        id="auctions-wrapper"
+        class="mx-auto grid max-w-300 grid-cols-1 gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      ></div>
+      <div class="flex justify-center gap-8 p-6">
+        <button
+          id="prev-page"
+          class="rounded-md bg-gray-200 px-4 py-2 hover:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          Previous
+        </button>
+        <button
+          id="next-page"
+          class="rounded-md bg-gray-200 px-4 py-2 hover:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          Next
+        </button>
+      </div>
     </main>
     <div id="footer-wrapper"></div>
   </body>
