@@ -11,7 +11,7 @@ async function fetchAndRenderAuctions(page) {
   isFetching = true;
   try {
     const response = await get(
-      `auction/listings/?page=${page}&limit=20&_bids=true`,
+      `auction/listings/?page=${page}&limit=20&_bids=true&_seller=true`,
     );
     console.log(response.data);
     const listings = response.data;
@@ -26,9 +26,12 @@ async function fetchAndRenderAuctions(page) {
       const img = document.createElement("img");
       const count = document.createElement("p");
       const textContainer = document.createElement("div");
+      const tagContainer = document.createElement("div");
+      const postAuthor = document.createElement("p");
 
       //display content
       title.textContent = listing.title;
+      postAuthor.textContent = `Created by - ${listing.seller.name}`;
 
       if (listing.media && listing.media.length > 0) {
         img.src = listing.media[0].url;
@@ -39,16 +42,30 @@ async function fetchAndRenderAuctions(page) {
       }
 
       // classes
-      card.className = "rounded-md bg-card shadow-md flex flex-col";
+      card.className =
+        "rounded-md bg-card shadow-md flex flex-col hover:scale-105";
       img.className = "rounded-t-md sm:h-48 w-full object-cover";
-      textContainer.className = "p-4";
-      title.className = "text-xl";
+      textContainer.className = "px-4 py-2 capitalize";
+      title.className = "text-xl truncate";
+      tagContainer.className =
+        "text-sm flex gap-2 truncate text-text-secondary font-regular";
+      postAuthor.className = "text-xs text-end mt-8";
+
+      if (listing.tags && listing.tags.length > 0) {
+        listing.tags.forEach((tag) => {
+          const tagElement = document.createElement("span");
+          tagElement.textContent = `#${tag}`;
+          tagContainer.appendChild(tagElement);
+        });
+      }
 
       card.href = `/pages/single-listing.html?id=${listing.id}`;
 
       //append content
       postContainer.appendChild(card);
       textContainer.appendChild(title);
+      textContainer.appendChild(tagContainer);
+      textContainer.appendChild(postAuthor);
       card.appendChild(img);
       card.appendChild(textContainer);
     });
