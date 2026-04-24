@@ -1,8 +1,10 @@
 import { get } from "./apiClient.js";
 
 const itemId = new URLSearchParams(window.location.search).get("id");
+const itemTitle = document.getElementById("item-title");
 const container = document.getElementById("listing-container");
 const galleryContainer = document.getElementById("gallery-container");
+const tags = document.getElementById("tags");
 
 async function fetchAndRenderListing() {
   try {
@@ -18,7 +20,7 @@ async function fetchAndRenderListing() {
 
     //image gallery -- https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp
     const expandedImg = document.createElement("img");
-    expandedImg.className = "w-full object-cover";
+    expandedImg.className = "w-full h-96 object-cover";
 
     const thumbnailRow = document.createElement("div");
     thumbnailRow.className = "flex flex-wrap";
@@ -29,19 +31,20 @@ async function fetchAndRenderListing() {
 
       images.forEach((image) => {
         const wrapper = document.createElement("div");
-        const thumb = document.createElement("img");
+        const thumbnail = document.createElement("img");
 
-        thumb.src = image.url;
-        thumb.alt = image.alt;
-        thumb.className = "w-full cursor-pointer opacity-60 hover:opacity-100";
+        thumbnail.src = image.url;
+        thumbnail.alt = image.alt;
+        thumbnail.className =
+          "w-full h-full object-cover cursor-pointer opacity-60 hover:opacity-100";
 
-        thumb.addEventListener("click", () => {
+        thumbnail.addEventListener("click", () => {
           expandedImg.src = image.url;
           expandedImg.alt = image.alt;
         });
 
-        wrapper.className = "w-1/4 p-1";
-        wrapper.append(thumb);
+        wrapper.className = "w-1/4 h-20 p-1";
+        wrapper.append(thumbnail);
         thumbnailRow.append(wrapper);
       });
     } else {
@@ -59,9 +62,12 @@ async function fetchAndRenderListing() {
     const description = document.createElement("p");
     description.textContent = listing.description;
 
-    //appending
+    //tags
+    tags.textContent = listing.tags.join(" / ");
 
-    container.append(title, description);
+    //appending
+    itemTitle.appendChild(title);
+    container.appendChild(description);
   } catch (error) {
     console.error("Error fetching listing:", error);
   }
