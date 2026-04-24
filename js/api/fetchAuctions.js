@@ -115,27 +115,29 @@ async function fetchAndRenderAuctions(page, search = "") {
       if (diffMs <= 0) {
         timer.innerHTML = `<div class="text-sm rounded-md  py-1 px-2 absolute top-2 right-2 bg-dark-bg text-white">${formattedCountdown}</div>`;
       } else {
-        timer.innerHTML = `<div class="text-sm rounded-md py-1 px-2 absolute top-2 right-2 bg-teal-600 text-white">${formattedCountdown}</div>`;
+        timer.innerHTML = `<div class="text-sm rounded-md py-1 px-2 absolute top-2 right-2 bg-teal-600/80 backdrop-blur-lg text-white flex items-center gap-1.5"><span class="size-1.5 rounded-full bg-white animate-pulse"></span>${formattedCountdown}</div>`;
       }
 
       // classes
       card.className =
-        "group rounded-md bg-gray-200 shadow-md flex flex-col hover:scale-101 relative overflow-hidden";
-      img.className = "rounded-t-md sm:h-48 w-full object-cover";
-      textContainer.className = "px-4 py-2 capitalize";
-      title.className = "text-xl font-semibold truncate";
-      tagContainer.className =
-        "text-sm flex gap-2 truncate text-text-secondary font-regular";
-      postAuthor.className = "text-xs text-end mt-4";
-      bidCount.className = "text-sm text-text-secondary";
-      bidWrapper.className = "flex flex-col mt-4 pt-3 border-t border-gray-200";
+        "group rounded-md bg-white shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col relative overflow-hidden";
+      img.className = "h-52 w-full object-cover";
+      textContainer.className = "px-4 py-3 flex flex-col flex-1 capitalize";
+      title.className = "text-base font-semibold truncate";
+      tagContainer.className = "text-xs flex gap-1.5 flex-wrap mt-1";
+      postAuthor.className = "text-xs text-text-secondary mt-2";
+      bidCount.className = "text-xs text-text-secondary";
+      bidWrapper.className =
+        "flex items-center justify-between mt-3 pt-3 border-t border-gray-100";
       btn.className =
-        "flex items-center justify-center py-1 bg-teal-600/70 mt-4 text-white hover:bg-teal-600/90 group-hover:bg-teal-600/90 rounded-md";
+        "flex items-center justify-center py-2 bg-teal-600 mt-3 text-white text-sm font-medium hover:bg-teal-700 rounded-md transition-colors";
 
       if (listing.tags && listing.tags.length > 0) {
         listing.tags.forEach((tag) => {
           const tagElement = document.createElement("span");
           tagElement.textContent = `#${tag}`;
+          tagElement.className =
+            "bg-gray-100 text-text-secondary rounded-full px-2 py-0.5";
           tagContainer.appendChild(tagElement);
         });
       }
@@ -152,9 +154,9 @@ async function fetchAndRenderAuctions(page, search = "") {
       textContainer.appendChild(bidWrapper);
       textContainer.appendChild(btn);
       textContainer.appendChild(postAuthor);
-      textContainer.appendChild(timer);
 
       card.appendChild(img);
+      card.appendChild(timer);
       card.appendChild(textContainer);
     });
 
