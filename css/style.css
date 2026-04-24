@@ -258,6 +258,9 @@
   .z-50 {
     z-index: 50;
   }
+  .float-left {
+    float: left;
+  }
   .container {
     width: 100%;
     @media (width >= 30rem) {
@@ -374,6 +377,9 @@
   .min-h-screen {
     min-height: 100vh;
   }
+  .w-1\/4 {
+    width: calc(1 / 4 * 100%);
+  }
   .w-14 {
     width: calc(var(--spacing) * 14);
   }
@@ -382,6 +388,9 @@
   }
   .w-84 {
     width: calc(var(--spacing) * 84);
+  }
+  .w-\[25\%\] {
+    width: 25%;
   }
   .w-full {
     width: 100%;
@@ -614,6 +623,9 @@
   .object-cover {
     object-fit: cover;
   }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
@@ -799,6 +811,9 @@
       }
     }
   }
+  .opacity-60 {
+    opacity: 60%;
+  }
   .shadow-md {
     --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -914,6 +929,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-white);
+      }
+    }
+  }
+  .hover\:opacity-100 {
+    &:hover {
+      @media (hover: hover) {
+        opacity: 100%;
       }
     }
   }
