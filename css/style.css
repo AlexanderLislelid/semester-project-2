@@ -436,6 +436,9 @@
   .max-w-xl {
     max-width: var(--container-xl);
   }
+  .min-w-96 {
+    min-width: calc(var(--spacing) * 96);
+  }
   .flex-1 {
     flex: 1;
   }
@@ -1053,6 +1056,11 @@
       flex-direction: column;
     }
   }
+  .sm\:items-start {
+    @media (width >= 40rem) {
+      align-items: flex-start;
+    }
+  }
   .sm\:justify-end {
     @media (width >= 40rem) {
       justify-content: flex-end;
@@ -1107,6 +1115,16 @@
   .lg\:grid-cols-4 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .xl\:mx-auto {
+    @media (width >= 80rem) {
+      margin-inline: auto;
+    }
+  }
+  .xl\:min-w-300 {
+    @media (width >= 80rem) {
+      min-width: calc(var(--spacing) * 300);
     }
   }
 }
