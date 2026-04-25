@@ -26,12 +26,43 @@ async function fetchAndRenderListing() {
 
     tabs.forEach((tab) => {
       tab.addEventListener("click", () => {
-        tabs.forEach((t) => t.classList.remove("border-b-2", "border-teal-600"));
+        tabs.forEach((t) =>
+          t.classList.remove("border-b-2", "border-teal-600"),
+        );
         content.forEach((c) => c.classList.add("hidden"));
 
         tab.classList.add("border-b-2", "border-teal-600");
         document.getElementById(tab.dataset.tab).classList.remove("hidden");
       });
+    });
+
+    //bid history
+    const bidHistoryList = document.getElementById("bid-history-list");
+
+    bids.forEach((bid) => {
+      const card = document.createElement("div");
+      const avatar = document.createElement("img");
+      const name = document.createElement("p");
+      const amountDiv = document.createElement("div");
+      const icon = document.createElement("i");
+      const amount = document.createElement("p");
+
+      avatar.src = bid.bidder.avatar.url;
+      avatar.alt = bid.bidder.avatar.alt;
+      avatar.className = "h-10 w-10 rounded-full object-cover";
+
+      name.textContent = bid.bidder.name;
+      amount.textContent = bid.amount;
+
+      amountDiv.className = "flex items-center gap-2";
+      card.className =
+        "bg-gray-100 flex items-center justify-between rounded-md py-2 px-4 shadow-md";
+      icon.className = "fa-regular fa-coins";
+
+      amountDiv.append(icon, amount);
+
+      card.append(avatar, name, amountDiv);
+      bidHistoryList.append(card);
     });
 
     //image gallery -- https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp
