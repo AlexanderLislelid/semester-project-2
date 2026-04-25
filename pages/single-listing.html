@@ -260,48 +260,66 @@
       <h1 id="item-title" class="mt-8 px-8 text-2xl"></h1>
       <div id="tags" class="text-text-secondary px-8 text-sm font-light"></div>
       <div class="mt-4 grid grid-cols-1 px-8 sm:grid-cols-2">
-        <div id="gallery-container" class="max-w-96"></div>
+        <div id="gallery-container" class="max-w-full"></div>
         <div id="listing-container" class="flex flex-col gap-4 sm:px-4">
-          <p id="item-description"></p>
-          <div
-            id="item-stats"
-            class="bg-card overflow-hidden rounded-md shadow-md"
-          >
-            <div
-              class="border-edges flex flex-col items-center border-b px-6 py-4"
+          <div class="border-edges flex border-b">
+            <button
+              class="tab-btn border-b-2 border-teal-600 px-4 py-2"
+              data-tab="item-information"
             >
-              <p
-                class="text-text-secondary text-2xs mb-2 font-medium tracking-widest uppercase"
-              >
-                Time Remaining
-              </p>
-              <div id="timer"></div>
-            </div>
-            <div class="grid grid-cols-2">
+              Item information
+            </button>
+            <button class="tab-btn px-4 py-2" data-tab="item-bid-history">
+              Bid History
+            </button>
+          </div>
+          <div class="mt-4 min-h-96">
+            <div id="item-information" class="tab-content">
+              <p id="item-description" class="mt-10 sm:mt-0"></p>
               <div
-                class="border-edges flex flex-col items-center border-r px-6 py-4"
+                id="item-stats"
+                class="mt-6 overflow-hidden rounded-md shadow-md"
               >
-                <p
-                  class="text-text-secondary text-2xs mb-1 font-medium tracking-widest uppercase"
+                <div
+                  class="border-edges flex flex-col items-center border-b px-6 py-4"
                 >
-                  Highest Bid
-                </p>
-                <div class="flex items-center gap-2 text-lg font-semibold">
-                  <i class="fa-regular fa-coins text-teal-600"></i>
-                  <p id="highest-bid"></p>
+                  <p
+                    class="text-text-secondary text-2xs mb-2 font-medium tracking-widest uppercase"
+                  >
+                    Time Remaining
+                  </p>
+                  <div id="timer"></div>
+                </div>
+                <div class="grid grid-cols-2">
+                  <div
+                    class="border-edges flex flex-col items-center border-r px-6 py-4"
+                  >
+                    <p
+                      class="text-text-secondary text-2xs mb-1 font-medium tracking-widest uppercase"
+                    >
+                      Highest Bid
+                    </p>
+                    <div class="flex items-center gap-2 text-lg font-semibold">
+                      <i class="fa-regular fa-coins text-teal-600"></i>
+                      <p id="highest-bid"></p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-center px-6 py-4">
+                    <p
+                      class="text-text-secondary text-2xs mb-1 font-medium tracking-widest uppercase"
+                    >
+                      Bids
+                    </p>
+                    <div class="flex items-center gap-2 text-lg font-semibold">
+                      <i class="fa-regular fa-gavel text-teal-600"></i>
+                      <p id="number-of-bids"></p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="flex flex-col items-center px-6 py-4">
-                <p
-                  class="text-text-secondary text-2xs mb-1 font-medium tracking-widest uppercase"
-                >
-                  Bids
-                </p>
-                <div class="flex items-center gap-2 text-lg font-semibold">
-                  <i class="fa-regular fa-gavel text-teal-600"></i>
-                  <p id="number-of-bids"></p>
-                </div>
-              </div>
+            </div>
+            <div id="item-bid-history" class="tab-content hidden">
+              djkbfksdhfkjdshjkfhsd
             </div>
           </div>
         </div>
