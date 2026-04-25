@@ -17,7 +17,8 @@ async function fetchAndRenderListing() {
     const listing = data.data;
     const bids = listing.bids;
     const images = listing.media;
-    console.log(images);
+
+    console.log(bids);
 
     //image gallery -- https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp
     const expandedImg = document.createElement("img");
@@ -67,6 +68,12 @@ async function fetchAndRenderListing() {
     } else {
       displayTimeContainer.innerHTML = `${formattedCountdown}`;
     }
+
+    //bids
+    const currentHighestBid = document.getElementById("highest-bid");
+    const numberOfBids = document.getElementById("number-of-bids");
+    currentHighestBid.textContent = bids.at(-1).amount;
+    numberOfBids.textContent = bids.length;
 
     itemTitle.textContent = listing.title;
     itemDescription.textContent = listing.description;
