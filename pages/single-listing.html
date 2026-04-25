@@ -252,12 +252,29 @@
         </button>
       </div>
     </div>
-    <main class="mx-auto flex-1">
+    <main class="mx-auto max-w-300 flex-1">
+      <div class="mx-8 mt-4 flex gap-2 font-light">
+        <a href="../index.html">Home /</a>
+        <p class="text-teal-700">Product</p>
+      </div>
       <h1 id="item-title" class="mt-8 px-8 text-2xl"></h1>
+      <div id="tags" class="text-text-secondary px-8 text-sm font-light"></div>
       <div class="mt-4 grid grid-cols-1 px-8 sm:grid-cols-2">
         <div id="gallery-container" class="max-w-96"></div>
-        <div id="listing-container" class="sm:px-4"></div>
-        <div id="tags" class="mt-4"></div>
+        <div id="listing-container" class="flex flex-col gap-4 sm:px-4">
+          <p id="item-description"></p>
+          <div
+            id="item-stats"
+            class="bg-card flex flex-col items-center rounded-md p-4 shadow-md"
+          >
+            <div class="border-edges flex flex-col items-center border-b py-1">
+              <p class="text-text-secondary text-xs tracking-widest">
+                TIME REMAINING
+              </p>
+              <div id="timer"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <div id="footer-wrapper"></div>

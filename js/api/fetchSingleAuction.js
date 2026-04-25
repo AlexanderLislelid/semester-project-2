@@ -1,8 +1,9 @@
 import { get } from "./apiClient.js";
+import { formatMilliseconds } from "../utils/formatter.js";
 
 const itemId = new URLSearchParams(window.location.search).get("id");
 const itemTitle = document.getElementById("item-title");
-const container = document.getElementById("listing-container");
+const itemDescription = document.getElementById("item-description");
 const galleryContainer = document.getElementById("gallery-container");
 const tags = document.getElementById("tags");
 
@@ -54,20 +55,22 @@ async function fetchAndRenderListing() {
 
     galleryContainer.append(expandedImg, thumbnailRow);
 
-    //title
-    const title = document.createElement("h1");
-    title.textContent = listing.title;
+    //timer
+    const displayTimeContainer = document.getElementById("timer");
+    const endsAt = new Date(listing.endsAt);
+    const now = new Date();
+    const diffMs = endsAt - now;
+    const formattedCountdown = formatMilliseconds(diffMs);
 
-    //desc
-    const description = document.createElement("p");
-    description.textContent = listing.description;
+    if (diffMs <= 0) {
+      displayTimeContainer.innerHTML = `<p class="text-red-500">${formattedCountdown}</p>`;
+    } else {
+      displayTimeContainer.innerHTML = `${formattedCountdown}`;
+    }
 
-    //tags
+    itemTitle.textContent = listing.title;
+    itemDescription.textContent = listing.description;
     tags.textContent = listing.tags.join(" / ");
-
-    //appending
-    itemTitle.appendChild(title);
-    container.appendChild(description);
   } catch (error) {
     console.error("Error fetching listing:", error);
   }
