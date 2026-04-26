@@ -37,6 +37,14 @@
   @apply my-2 cursor-pointer rounded-md bg-teal-600/80 px-4 py-2 text-white transition hover:bg-teal-700/70;
 }
 
+.btn-primary-form {
+  @apply my-2 cursor-pointer rounded-md bg-teal-600 px-4 py-2 text-sm text-white transition hover:bg-teal-700;
+}
+
+.btn-cancel-form {
+  @apply bg-edges/20 hover:bg-edges my-2 cursor-pointer rounded-md border border-gray-300 px-4 py-2 text-sm;
+}
+
 .btn-filter {
   @apply rounded-full border border-teal-600 px-4 py-1.5 text-sm transition hover:bg-teal-600 hover:text-white;
 }

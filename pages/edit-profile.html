@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon_io/favicon-32x32.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/ef4bd31f38.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/components/nav.js" type="module"></script>
+    <script src="../js/components/footer.js" defer></script>
+    <script type="module" src="../js/api/editProfile.js"></script>
+  </head>
+  <body class="bg-background flex min-h-screen flex-col">
+    <main class="flex-1">
+      <div class="mx-8 mt-8 flex gap-2 font-light">
+        <a href="./profile.html">Profile /</a>
+        <p class="text-teal-700">Edit</p>
+      </div>
+      <form
+        id="edit-profile"
+        class="bg-card border-edges mx-4 mt-10 flex max-w-150 flex-col gap-8 rounded-md border p-6 sm:mx-auto"
+      >
+        <div>
+          <h2 class="font-heading text-2xl">Edit profile</h2>
+          <p class="font-light">Update your profile details</p>
+        </div>
+        <div class="flex flex-col">
+          <label for="avatar">Avatar URL</label>
+          <input
+            type="text"
+            id="avatar"
+            class="inputs placeholder:text-sm"
+            placeholder="www.img.jpg"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="avatar-alt">Avatar Alt-text</label>
+          <input
+            type="text"
+            id="avatar-alt"
+            class="inputs placeholder:text-sm"
+            placeholder="Alt text for avatar"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="banner">Banner URL</label>
+          <input
+            type="text"
+            id="banner"
+            class="inputs placeholder:text-sm"
+            placeholder="www.img/banner.jpg"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="banner-alt">Banner Alt-text</label>
+          <input
+            type="text"
+            id="banner-alt"
+            class="inputs placeholder:text-sm"
+            placeholder="Alt text for banner"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="bio">Bio</label>
+          <textarea
+            id="bio"
+            class="inputs placeholder:text-sm"
+            rows="7"
+            placeholder="write something about yourself"
+          ></textarea>
+        </div>
+        <div class="flex justify-end gap-4">
+          <a href="./profile.html" class="btn-cancel-form">Cancel</a>
+          <button type="submit" class="btn-primary-form">Update</button>
+        </div>
+      </form>
+    </main>
+    <div id="footer-wrapper"></div>
+  </body>
+</html>
