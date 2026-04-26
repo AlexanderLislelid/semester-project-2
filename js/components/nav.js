@@ -1,5 +1,8 @@
 import { loadToken, removeToken, removeUser } from "../utils/storage.js";
 import { get } from "../api/apiClient.js";
+import { renderNav } from "./renderNav.js";
+
+renderNav();
 
 const BASE_PATH =
   window.location.hostname === "alexanderlislelid.github.io"
