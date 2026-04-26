@@ -44,7 +44,7 @@ async function getUserProfile() {
     const mobileAvatar = document.createElement("img");
     mobileAvatar.src = profile.avatar.url;
     mobileAvatar.alt = `${name}'s avatar`;
-    mobileAvatar.className = "w-14 rounded-full";
+    mobileAvatar.className = "w-14 h-14 rounded-full";
 
     const mobileInfo = document.createElement("div");
     const mobileName = document.createElement("p");
@@ -63,7 +63,7 @@ async function getUserProfile() {
     const desktopAvatar = document.createElement("img");
     desktopAvatar.src = profile.avatar.url;
     desktopAvatar.alt = `${name}'s avatar`;
-    desktopAvatar.className = "w-14 rounded-full";
+    desktopAvatar.className = "w-14 h-14 rounded-full";
 
     const desktopInfo = document.createElement("div");
     const desktopName = document.createElement("p");
