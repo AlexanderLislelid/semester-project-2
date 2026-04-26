@@ -121,4 +121,19 @@ export function renderNav() {
     </div>
   `,
   );
+
+  const currentPath = window.location.pathname.replace(BASE_PATH, "") || "/index.html";
+
+  document.querySelectorAll("#nav-mobile-menu a, #nav-desktop a, #desktop-dropdown a").forEach((link) => {
+    const linkPath = new URL(link.href).pathname.replace(BASE_PATH, "");
+    if (linkPath === currentPath) {
+      if (link.closest("#nav-desktop")) {
+        link.classList.add("border-b-2", "border-teal-600", "bg-gray-100");
+      } else if (link.closest("#desktop-dropdown")) {
+        link.classList.add("border-l-8", "border-teal-600", "bg-gray-200");
+      } else {
+        link.classList.add("border-l-4", "border-teal-600", "bg-gray-100");
+      }
+    }
+  });
 }

@@ -1,5 +1,6 @@
 import { get } from "./apiClient.js";
 import { formatMilliseconds } from "../utils/formatter.js";
+import { showTabs } from "../utils/tabs.js";
 
 const itemId = new URLSearchParams(window.location.search).get("id");
 const itemTitle = document.getElementById("item-title");
@@ -21,20 +22,7 @@ async function fetchAndRenderListing() {
     console.log(listing);
 
     // tabs
-    const tabs = document.querySelectorAll(".tab-btn");
-    const content = document.querySelectorAll(".tab-content");
-
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        tabs.forEach((t) =>
-          t.classList.remove("border-b-2", "border-teal-600"),
-        );
-        content.forEach((c) => c.classList.add("hidden"));
-
-        tab.classList.add("border-b-2", "border-teal-600");
-        document.getElementById(tab.dataset.tab).classList.remove("hidden");
-      });
-    });
+    showTabs();
 
     //bid history
     const bidHistoryList = document.getElementById("bid-history-list");
