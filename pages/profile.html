@@ -27,7 +27,26 @@
   </head>
   <body class="bg-background flex min-h-screen flex-col">
     <main class="lg max-w-300 flex-1 xl:mx-auto xl:min-w-300">
-      <div class="border-edges mt-6 flex border-b sm:mt-0">
+      <div id="my-profile" class="relative pb-20">
+        <img id="my-banner" class="h-40 w-full object-cover" />
+        <img
+          id="my-avatar"
+          class="absolute top-25 left-6 h-30 rounded-full object-cover"
+        />
+      </div>
+      <div class="flex gap-6 px-6">
+        <div class="flex flex-col">
+          <h1 id="my-name" class="text-2xl"></h1>
+          <p id="my-email" class="text-text-secondary text-sm"></p>
+        </div>
+      </div>
+      <p id="my-bio" class="px-6 py-10 font-light italic"></p>
+      <div class="flex items-center gap-4 p-5">
+        <div>Stats</div>
+        <div>stats</div>
+        <div>stats</div>
+      </div>
+      <div class="border-edges mt-6 flex border-b">
         <button
           class="tab-btn border-b-2 border-teal-600 px-4 py-2"
           data-tab="my-bids"
@@ -37,10 +56,6 @@
         <button class="tab-btn px-4 py-2" data-tab="my-listings">
           My Listings
         </button>
-      </div>
-      <div id="my-profile">
-        <img id="my-banner" />
-        <img id="my-avatar" />
       </div>
       <div id="my-bids" class="tab-content p-4"></div>
       <div id="my-listings" class="tab-content hidden p-4"></div>

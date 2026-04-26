@@ -14,6 +14,22 @@ async function fetchAndRenderProfile() {
     );
     const data = response.data;
     console.log(data);
+
+    const banner = document.getElementById("my-banner");
+    const avatar = document.getElementById("my-avatar");
+    const myName = document.getElementById("my-name");
+    const myEmail = document.getElementById("my-email");
+    const bio = document.getElementById("my-bio");
+
+    banner.src = data.banner.url;
+    avatar.src = data.avatar.url;
+    myName.textContent = data.name;
+    myEmail.textContent = data.email;
+    if (!data.bio) {
+      bio.textContent = "No bio yet.. Edit profile to update.";
+    } else {
+      bio.textContent = data.bio;
+    }
   } catch (error) {}
 }
 fetchAndRenderProfile();
