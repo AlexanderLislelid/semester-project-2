@@ -20,6 +20,9 @@ async function fetchAndRenderProfile() {
     const myName = document.getElementById("my-name");
     const myEmail = document.getElementById("my-email");
     const bio = document.getElementById("my-bio");
+    const myCredits = document.getElementById("my-credits");
+    const numberOfListings = document.getElementById("my-listings-amount");
+    const numberOfWins = document.getElementById("my-wins-amount");
 
     banner.src = data.banner.url;
     avatar.src = data.avatar.url;
@@ -30,6 +33,9 @@ async function fetchAndRenderProfile() {
     } else {
       bio.textContent = data.bio;
     }
+    myCredits.textContent = data.credits;
+    numberOfListings.textContent = data.listings.length;
+    numberOfWins.textContent = data.wins.length;
   } catch (error) {}
 }
 fetchAndRenderProfile();
