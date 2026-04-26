@@ -56,8 +56,8 @@ async function fetchAndRenderListing() {
 
       amountDiv.className = "flex items-center gap-2";
       card.className =
-        "bg-gray-100 flex items-center justify-between rounded-md py-2 px-4 shadow-md";
-      icon.className = "fa-regular fa-coins";
+        "flex items-center border-b border-edges justify-between py-2 px-4";
+      icon.className = "fa-regular fa-coins text-teal-600";
 
       amountDiv.append(icon, amount);
 
@@ -73,14 +73,15 @@ async function fetchAndRenderListing() {
     const createdAt = document.createElement("p");
 
     sellerAvatar.src = listing.seller.avatar.url;
-    sellerAvatar.className = "rounded-full h-20 w-20";
+    sellerAvatar.className = "rounded-full h-15 w-15";
 
     sellerName.textContent = listing.seller.name;
     createdAt.textContent = `Created: ${listing.created.slice(0, 10)}`;
 
     createdAt.className = "text-text-secondary text-sm";
     sellerInfo.className = "flex flex-col ";
-    sellerDiv.className = "flex items-center gap-4 py-4 border-t border-edges";
+    sellerDiv.className =
+      "border-edges border-t border-b flex items-center gap-4 py-6 px-8";
     sellerInfo.append(sellerName, createdAt);
     sellerDiv.append(sellerAvatar, sellerInfo);
 
@@ -141,6 +142,7 @@ async function fetchAndRenderListing() {
 
     itemTitle.textContent = listing.title;
     itemDescription.textContent = listing.description;
+
     tags.textContent = listing.tags.join(" / ");
   } catch (error) {
     console.error("Error fetching listing:", error);
