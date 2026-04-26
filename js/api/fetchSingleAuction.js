@@ -18,7 +18,7 @@ async function fetchAndRenderListing() {
     const bids = listing.bids;
     const images = listing.media;
 
-    console.log(bids);
+    console.log(listing);
 
     // tabs
     const tabs = document.querySelectorAll(".tab-btn");
@@ -64,6 +64,25 @@ async function fetchAndRenderListing() {
       card.append(avatar, name, amountDiv);
       bidHistoryList.append(card);
     });
+
+    //seller
+    const sellerDiv = document.getElementById("item-seller");
+    const sellerAvatar = document.createElement("img");
+    const sellerInfo = document.createElement("div");
+    const sellerName = document.createElement("p");
+    const createdAt = document.createElement("p");
+
+    sellerAvatar.src = listing.seller.avatar.url;
+    sellerAvatar.className = "rounded-full h-20 w-20";
+
+    sellerName.textContent = listing.seller.name;
+    createdAt.textContent = `Created: ${listing.created.slice(0, 10)}`;
+
+    createdAt.className = "text-text-secondary text-sm";
+    sellerInfo.className = "flex flex-col ";
+    sellerDiv.className = "flex items-center gap-4 py-4 border-t border-edges";
+    sellerInfo.append(sellerName, createdAt);
+    sellerDiv.append(sellerAvatar, sellerInfo);
 
     //image gallery -- https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp
     const expandedImg = document.createElement("img");
