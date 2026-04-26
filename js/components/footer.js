@@ -2,7 +2,7 @@ function initFooter() {
   const wrapper = document.getElementById("footer-wrapper");
   return (wrapper.innerHTML = `<footer class="bg-dark-bg">
       <div
-        class="sm:grid sm:grid-cols-[2fr_1fr_1fr] flex flex-col text-text-muted"
+        class="sm:grid sm:grid-cols-[2fr_1fr_1fr] flex flex-col text-text-muted mt-60"
       >
         <div class="p-8">
           <h3 class="font-heading text-2xl text-white">GAVEL AUCTION HOUSE</h3>
