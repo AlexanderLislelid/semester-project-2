@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/semester-project-2/assets/favicon-32x32-rTuilG3L.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/ef4bd31f38.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script src="./js/components/footer.js" defer></script>
+    <script type="module" crossorigin src="/semester-project-2/assets/index-Ch-w1JaE.js"></script>
+    <link rel="stylesheet" crossorigin href="/semester-project-2/assets/index-CqVLS1Bl.css">
+  </head>
+  <body class="bg-background flex min-h-screen flex-col">
+    <main class="mx-auto flex-1">
+      <div
+        class="bg-hero mt-12 flex flex-col gap-12 bg-cover bg-center p-12 text-white"
+      >
+        <h1 class="font-heading text-3xl sm:text-4xl">Welcome to GAVEL</h1>
+        <p class="text-text-muted font-light">
+          Find what you're looking for. Bid what you want. Hundreds of items
+          listed every week. Sign up for free and get started.
+        </p>
+        <form id="search-form" class="flex max-w-xl">
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Search for items"
+            class="w-full rounded-l-md border border-white/30 bg-white/10 px-4 py-2 text-white placeholder-white/60 backdrop-blur-sm focus:ring-1 focus:ring-white focus:outline-none"
+          />
+          <button
+            type="submit"
+            class="rounded-r-md bg-teal-600 px-4 text-white hover:bg-teal-700"
+            aria-label="Search"
+          >
+            <i class="fa-regular fa-magnifying-glass" aria-hidden="true"></i>
+          </button>
+        </form>
+        <div class="flex items-center gap-4 font-light">
+          <a href="./pages/login.html" class="btn-primary px-4">Log in</a>
+          <a href="./pages/register.html" class="btn-ghost">Register</a>
+        </div>
+      </div>
+      <div
+        class="bg-card border-b-edges flex items-center gap-2 border-b px-6 py-6"
+      >
+        <span class="text-text-secondary mr-2 text-sm">Sort by:</span>
+        <button id="newest-filter" class="btn-filter">
+          <i class="fa-regular fa-sparkles mr-1.5" aria-hidden="true"></i>Newest
+        </button>
+        <button id="oldest-filter" class="btn-filter">
+          <i
+            class="fa-regular fa-clock-rotate-left mr-1.5"
+            aria-hidden="true"
+          ></i
+          >Oldest
+        </button>
+        <button id="ending-soon-filter" class="btn-filter">
+          <i class="fa-regular fa-clock mr-1.5" aria-hidden="true"></i>Ending
+          Soon
+        </button>
+      </div>
+      <div class="flex items-center justify-between p-6">
+        <h2 id="filtered-headline" class="text-xl">All Auctions</h2>
+        <p class="text-sm" id="items"></p>
+      </div>
+      <div
+        id="auctions-wrapper"
+        class="mx-auto grid max-w-300 grid-cols-1 gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      ></div>
+      <div class="flex justify-center gap-8 p-6">
+        <button
+          id="prev-page"
+          class="rounded-md bg-gray-200 px-4 py-2 hover:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <i class="fa-regular fa-angles-left mr-2" aria-hidden="true"></i>Prev
+        </button>
+        <button
+          id="next-page"
+          class="rounded-md bg-gray-200 px-4 py-2 hover:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          Next<i class="fa-regular fa-angles-right ml-2" aria-hidden="true"></i>
+        </button>
+      </div>
+    </main>
+    <div id="footer-wrapper"></div>
+  </body>
+</html>
