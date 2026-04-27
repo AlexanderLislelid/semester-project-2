@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
+    "test": "vite --open /testing/test.html",
     "build": "vite build",
     "deploy": "npm run build && gh-pages -d dist"
   },
