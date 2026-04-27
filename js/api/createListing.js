@@ -71,7 +71,7 @@ form.addEventListener("submit", async (e) => {
     const data = await post("auction/listings", body);
     showToast("Auction Created", "Auction created successfully!", "success");
     setTimeout(() => {
-      window.location.href = `/pages/single-listing.html?id=${data.data.id}`;
+      window.location.href = `${BASE_PATH}/pages/single-listing.html?id=${data.data.id}`;
     }, 2500);
   } catch (error) {
     showToast("Error", `${error.message}`, "error");

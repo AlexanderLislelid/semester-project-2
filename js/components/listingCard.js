@@ -2,6 +2,8 @@ import { formatMilliseconds } from "../utils/formatter.js";
 import { loadUser } from "../utils/storage.js";
 import { showBidModal } from "./bidModal.js";
 
+const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 export function renderListingCard(listings) {
   const postContainer = document.getElementById("listings-container");
   listings.forEach((listing) => {
@@ -95,7 +97,7 @@ export function renderListingCard(listings) {
       showBidModal(listing);
     });
 
-    card.href = `/pages/single-listing.html?id=${listing.id}`;
+    card.href = `${BASE_PATH}/pages/single-listing.html?id=${listing.id}`;
 
     //append content
     postContainer.appendChild(card);
