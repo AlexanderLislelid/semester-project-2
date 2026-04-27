@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tailwindcss -i ./css/input.css -o ./css/style.css --watch",
-    "build": "tailwindcss -i ./css/input.css -o ./css/style.css --minify"
+    "dev": "vite",
+    "build": "vite build"
   },
   "keywords": [],
   "author": "",
@@ -13,8 +12,10 @@
   "description": "",
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.2",
+    "@tailwindcss/vite": "^4.2.4",
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "tailwindcss": "^4.2.2"
+    "tailwindcss": "^4.2.2",
+    "vite": "^8.0.10"
   }
 }
