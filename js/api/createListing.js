@@ -1,5 +1,6 @@
 import { isLoggedIn } from "../utils/storage.js";
 import { post } from "../api/apiClient.js";
+import { showToast } from "../components/toasts.js";
 
 if (!isLoggedIn()) {
   window.location.href = "/pages/login.html";
@@ -66,12 +67,12 @@ form.addEventListener("submit", async (e) => {
       endsAt: new Date(endDate.value).toISOString(),
     };
     const data = await post("auction/listings", body);
-    // NOTE TO SELF <----- ADD SUCCESS TOAST
+    showToast("Auction Created", "Auction created successfully!", "success");
     setTimeout(() => {
       window.location.href = `/pages/single-listing.html?id=${data.data.id}`;
-    }, 2000);
+    }, 2500);
   } catch (error) {
-    // NOTE TO SELF <----- ADD ERRORMESSAGE TO USER
+    showToast("Error", `${error.message}`, "error");
     console.error(error);
   }
 });
