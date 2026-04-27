@@ -37,7 +37,11 @@ form.addEventListener("submit", async (e) => {
     if (bioInput.value) body.bio = bioInput.value;
 
     const formData = await put(`auction/profiles/${loadUser().name}`, body);
-    window.location.href = "/pages/profile.html";
+    const BASE_PATH =
+      window.location.hostname === "alexanderlislelid.github.io"
+        ? "/semester-project-2"
+        : "";
+    window.location.href = `${BASE_PATH}/pages/profile.html`;
   } catch (error) {
     console.error(error);
   }
