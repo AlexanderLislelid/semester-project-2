@@ -4,10 +4,7 @@ import { renderNav } from "./renderNav.js";
 
 renderNav();
 
-const BASE_PATH =
-  window.location.hostname === "alexanderlislelid.github.io"
-    ? "/semester-project-2"
-    : "";
+const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const userContainer = document.getElementById("mobile-menu-profile");
 const creditsContainer = document.getElementById("credits-mobile-menu");

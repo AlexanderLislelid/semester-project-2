@@ -1,5 +1,8 @@
 import { get, put } from "../api/apiClient.js";
 import { loadUser } from "../utils/storage.js";
+import { showToast } from "../components/toasts.js";
+
+const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const form = document.getElementById("edit-profile");
 const avatarInput = document.getElementById("avatar");
@@ -15,12 +18,11 @@ async function fetchProfileInfo() {
     avatarAlt.placeholder = data.avatar.alt;
     bannerInput.placeholder = data.banner.url;
     bannerAlt.placeholder = data.banner.alt;
-    console.log(data);
     if (data.bio) {
       bioInput.placeholder = data.bio;
     }
   } catch (error) {
-    console.error(error);
+    showToast("Error", "Could not load profile data.", "error");
   }
 }
 fetchProfileInfo();
@@ -36,13 +38,12 @@ form.addEventListener("submit", async (e) => {
       body.banner = { url: bannerInput.value, alt: bannerAlt.value };
     if (bioInput.value) body.bio = bioInput.value;
 
-    const formData = await put(`auction/profiles/${loadUser().name}`, body);
-    const BASE_PATH =
-      window.location.hostname === "alexanderlislelid.github.io"
-        ? "/semester-project-2"
-        : "";
-    window.location.href = `${BASE_PATH}/pages/profile.html`;
+    await put(`auction/profiles/${loadUser().name}`, body);
+    showToast("Profile Updated", "Your profile was updated successfully!", "success");
+    setTimeout(() => {
+      window.location.href = `${BASE_PATH}/pages/profile.html`;
+    }, 2500);
   } catch (error) {
-    console.error(error);
+    showToast("Error", `${error.message}`, "error");
   }
 });

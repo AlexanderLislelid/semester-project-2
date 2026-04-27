@@ -1,7 +1,4 @@
-const BASE_PATH =
-  window.location.hostname === "alexanderlislelid.github.io"
-    ? "/semester-project-2"
-    : "";
+const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 export function renderNav() {
   document.body.insertAdjacentHTML(

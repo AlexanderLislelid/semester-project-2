@@ -2,10 +2,7 @@ import { get, post, put, del } from "./apiClient.js";
 import { showTabs } from "../utils/tabs.js";
 import { loadUser, loadToken } from "../utils/storage.js";
 
-const BASE_PATH =
-  window.location.hostname === "alexanderlislelid.github.io"
-    ? "/semester-project-2"
-    : "";
+const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 if (!loadUser() && !loadToken()) {
   window.location.href = `${BASE_PATH}/pages/login.html`;
