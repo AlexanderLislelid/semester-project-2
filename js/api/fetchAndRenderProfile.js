@@ -1,6 +1,6 @@
 import { get, post, put, del } from "./apiClient.js";
 import { showTabs } from "../utils/tabs.js";
-import { isLoggedIn } from "../utils/storage.js";
+import { isLoggedIn, loadUser } from "../utils/storage.js";
 
 const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -25,6 +25,7 @@ async function fetchAndRenderProfile() {
     const myCredits = document.getElementById("my-credits");
     const numberOfListings = document.getElementById("my-listings-amount");
     const numberOfWins = document.getElementById("my-wins-amount");
+    const myListingsContainer = document.getElementById("my-listings");
 
     banner.src = data.banner.url;
     avatar.src = data.avatar.url;
@@ -38,6 +39,8 @@ async function fetchAndRenderProfile() {
     myCredits.textContent = data.credits;
     numberOfListings.textContent = data.listings.length;
     numberOfWins.textContent = data.wins.length;
-  } catch (error) {}
+  } catch (error) {
+    console.error("error:", error);
+  }
 }
 fetchAndRenderProfile();
