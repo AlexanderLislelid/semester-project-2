@@ -1,4 +1,4 @@
-import{i as e,o as t,s as n,t as r}from"./apiClient-CRMVkR2S.js";var i=window.location.hostname===`alexanderlislelid.github.io`?`/semester-project-2`:``;function a(){document.body.insertAdjacentHTML(`afterbegin`,`
+import{i as e,o as t,s as n,t as r}from"./apiClient-Bgt7fgGL.js";var i=window.location.hostname===`alexanderlislelid.github.io`?`/semester-project-2`:``;function a(){document.body.insertAdjacentHTML(`afterbegin`,`
     <nav id="nav-mobile" class="border-edges flex items-center justify-between border-b sm:hidden">
       <div class="px-2 pb-2 leading-1">
         <a href="${i}/index.html">
