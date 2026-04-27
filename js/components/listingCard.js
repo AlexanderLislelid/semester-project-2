@@ -1,5 +1,6 @@
 import { formatMilliseconds } from "../utils/formatter.js";
 import { loadUser } from "../utils/storage.js";
+import { showBidModal } from "./bidModal.js";
 
 export function renderListingCard(listings) {
   const postContainer = document.getElementById("listings-container");
@@ -14,7 +15,7 @@ export function renderListingCard(listings) {
     const tagContainer = document.createElement("div");
     const postAuthor = document.createElement("p");
     const timer = document.createElement("div");
-    const btn = document.createElement("a");
+    const btn = document.createElement("button");
 
     //display content
     title.textContent = listing.title;
@@ -81,10 +82,18 @@ export function renderListingCard(listings) {
       });
     }
 
-    if (listing.seller.name === loadUser().name) {
+    const user = loadUser();
+    if (!user || listing.seller.name === user.name) {
       btn.classList.add("hidden");
+    } else {
+      btn.classList.remove("hidden");
     }
+
     btn.textContent = "Bid on item";
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      showBidModal(listing);
+    });
 
     card.href = `/pages/single-listing.html?id=${listing.id}`;
 
