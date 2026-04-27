@@ -21,3 +21,11 @@ export function loadUser() {
 export function removeUser() {
   localStorage.removeItem("user");
 }
+
+export function isLoggedIn() {
+  if (loadUser() && loadToken()) {
+    return true;
+  } else {
+    return false;
+  }
+}
