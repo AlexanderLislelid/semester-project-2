@@ -1,6 +1,6 @@
 import { loadToken } from "../utils/storage.js";
-const API_KEY = import.meta.env.VITE_API_KEY;
 
+const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = "https://v2.api.noroff.dev/";
 
 async function apiClient(endpoint, options = {}) {

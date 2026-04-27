@@ -5,9 +5,9 @@ import { dirname } from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-export default {
+export default ({ command }) => ({
   plugins: [tailwindcss()],
-  base: "/semester-project-2/",
+  base: command === "build" ? "/semester-project-2/" : "/",
   build: {
     rollupOptions: {
       input: {
@@ -22,4 +22,4 @@ export default {
       },
     },
   },
-};
+});
