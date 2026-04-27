@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/semester-project-2/assets/favicon-32x32-rTuilG3L.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/ef4bd31f38.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Register</title>
+    <script type="module" crossorigin src="/semester-project-2/assets/register-DYCgHRcR.js"></script>
+    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/apiClient-CRMVkR2S.js">
+    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/toasts-B0K6VYcC.js">
+    <link rel="stylesheet" crossorigin href="/semester-project-2/assets/apiClient-CqVLS1Bl.css">
+  </head>
+  <body class="bg-background flex min-h-screen">
+    <div class="mx-auto flex w-full max-w-5xl flex-col md:my-auto md:flex-row">
+      <div class="bg-dark-bg flex flex-col p-6 text-white sm:p-10">
+        <h1 class="font-heading text-4xl leading-12 font-extralight">
+          Join Gavel. <br />
+          Start Collecting.
+        </h1>
+        <p class="text-text-muted mt-4 text-sm font-light">
+          Create a free account to bid on hundreds of items, list your own
+          treasures, and earn lots of coin
+        </p>
+        <div
+          class="mt-14 hidden flex-1 justify-between font-light text-white md:flex md:flex-col"
+        >
+          <div>
+            <p>
+              <i class="fa-solid fa-circle-check mr-2 text-teal-600"></i>
+              Free to join
+            </p>
+            <p>
+              <i class="fa-solid fa-circle-check mr-2 text-teal-600"></i>
+              Browse hundreds of listings
+            </p>
+            <p>
+              <i class="fa-solid fa-circle-check mr-2 text-teal-600"></i>
+              Post your own auctions
+            </p>
+            <p>
+              <i class="fa-solid fa-circle-check mr-2 text-teal-600"></i>
+              Earn credits
+            </p>
+          </div>
+          <div class="flex items-center gap-2 text-sm">
+            <p>Already a member?</p>
+            <span class="text-lg text-teal-600">•</span>
+            <a href="./login.html" class="underline hover:text-teal-600"
+              >Log in instead</a
+            >
+          </div>
+        </div>
+      </div>
+      <form
+        id="registration-form"
+        class="bg-card flex flex-col gap-8 p-6 sm:p-10 md:w-full"
+      >
+        <div>
+          <h2 class="font-heading text-2xl">Register</h2>
+          <p class="font-light">Enter your details to continue</p>
+        </div>
+        <div class="flex flex-col">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            class="inputs placeholder:text-sm"
+            placeholder="Your.Name"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            class="inputs placeholder:text-sm"
+            placeholder="you@stud.noroff.no"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="password">Password</label>
+          <input
+            class="inputs"
+            type="password"
+            name="password"
+            id="password"
+            required
+            placeholder="••••••••"
+          />
+          <p class="mt-1 text-sm font-light">
+            Use 8+ characters with a mix of letters, numbers and symbols.
+          </p>
+        </div>
+        <div class="flex flex-col">
+          <label for="password-confirm">Confirm Passoword</label>
+
+          <input
+            class="inputs"
+            type="password"
+            name="password-confirm"
+            id="password-confirm"
+            required
+            placeholder="••••••••"
+          />
+        </div>
+        <div
+          id="error-wrapper"
+          class="hidden rounded-md border border-red-500/50 bg-red-500/20 px-2 py-1 text-red-500"
+        ></div>
+        <div>
+          <input type="checkbox" name="tos" id="tos" />
+          <label for="tos" class="font-light"
+            >I agree to GAVEL's
+            <span class="font-medium text-teal-600 underline"
+              >Terms of service</span
+            >
+            and<span class="font-medium text-teal-600 underline">
+              Privacy policy.</span
+            ></label
+          >
+        </div>
+        <button type="submit" class="btn-primary">Register</button>
+        <div class="flex items-center justify-center gap-2">
+          <p class="text-text-secondary font-light">Already have an account?</p>
+          <a href="./login.html" class="text-teal-700">Log in</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

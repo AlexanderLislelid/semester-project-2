@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/semester-project-2/assets/favicon-32x32-rTuilG3L.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/ef4bd31f38.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <script type="module" crossorigin src="/semester-project-2/assets/profile-BNsZXPtL.js"></script>
+    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/apiClient-CRMVkR2S.js">
+    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/footer-DU74VQUZ.js">
+    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/tabs-D6ExrqD2.js">
+    <link rel="stylesheet" crossorigin href="/semester-project-2/assets/apiClient-CqVLS1Bl.css">
+  </head>
+  <body class="bg-background flex min-h-screen flex-col">
+    <main class="lg max-w-300 flex-1 xl:mx-auto xl:min-w-300">
+      <div id="my-profile" class="relative pb-20">
+        <img id="my-banner" class="h-40 w-full object-cover" />
+        <img
+          id="my-avatar"
+          class="absolute top-25 left-6 h-30 w-30 rounded-full object-cover"
+        />
+        <a
+          href="./edit-profile.html"
+          class="bg-background absolute right-4 bottom-16 rounded-t-lg px-6 py-2"
+          >Edit
+          <i class="fa-regular fa-pen-to-square text-teal-600"></i>
+        </a>
+      </div>
+      <div class="flex gap-6 px-6">
+        <div class="flex flex-col">
+          <h1 id="my-name" class="text-2xl"></h1>
+          <p id="my-email" class="text-text-secondary text-sm"></p>
+        </div>
+      </div>
+      <p id="my-bio" class="px-6 py-10 font-light italic"></p>
+      <div class="flex items-stretch gap-1 p-5">
+        <div
+          class="border-edges flex flex-1 flex-col items-center rounded-l-md border bg-white p-3"
+        >
+          <p class="text-text-secondary text-xs tracking-widest uppercase">
+            Credits
+          </p>
+          <p id="my-credits" class="text-xl font-semibold"></p>
+        </div>
+        <div
+          class="border-edges flex flex-1 flex-col items-center border bg-white p-3"
+        >
+          <p class="text-text-secondary text-xs tracking-widest uppercase">
+            Listings
+          </p>
+          <p id="my-listings-amount" class="text-xl font-semibold"></p>
+        </div>
+        <div
+          class="border-edges flex flex-1 flex-col items-center rounded-r-md border bg-white p-3"
+        >
+          <p class="text-text-secondary text-xs tracking-widest uppercase">
+            Wins
+          </p>
+          <p id="my-wins-amount" class="text-xl font-semibold"></p>
+        </div>
+      </div>
+      <div class="border-edges m-6 flex border-b">
+        <button
+          class="tab-btn border-b-2 border-teal-600 px-4 py-2"
+          data-tab="my-bids"
+        >
+          My Bids
+        </button>
+        <button class="tab-btn px-4 py-2" data-tab="my-listings">
+          My Listings
+        </button>
+      </div>
+      <div id="my-bids" class="tab-content p-4"></div>
+      <div id="my-listings" class="tab-content hidden p-4"></div>
+    </main>
+    <div id="footer-wrapper"></div>
+  </body>
+</html>
