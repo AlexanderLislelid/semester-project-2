@@ -17,6 +17,8 @@ export default {
         profile: resolve(__dirname, "pages/profile.html"),
         "edit-profile": resolve(__dirname, "pages/edit-profile.html"),
         "single-listing": resolve(__dirname, "pages/single-listing.html"),
+        "create-listing": resolve(__dirname, "pages/create-listing.html"),
+        "edit-listing": resolve(__dirname, "pages/edit-listing.html"),
       },
     },
   },
