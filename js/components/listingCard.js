@@ -1,4 +1,5 @@
 import { formatMilliseconds } from "../utils/formatter.js";
+import { loadUser } from "../utils/storage.js";
 
 export function renderListingCard(listings) {
   const postContainer = document.getElementById("listings-container");
@@ -19,7 +20,6 @@ export function renderListingCard(listings) {
     title.textContent = listing.title;
     postAuthor.textContent = `Created by ${listing.seller.name}`;
     bidCount.textContent = `Bids ${listing.bids.length}`;
-    btn.textContent = "Bid on item";
 
     if (listing.bids.length > 0) {
       const icon = document.createElement("i");
@@ -80,6 +80,11 @@ export function renderListingCard(listings) {
         tagContainer.appendChild(tagElement);
       });
     }
+
+    if (listing.seller.name === loadUser().name) {
+      btn.classList.add("hidden");
+    }
+    btn.textContent = "Bid on item";
 
     card.href = `/pages/single-listing.html?id=${listing.id}`;
 
