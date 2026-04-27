@@ -1,6 +1,7 @@
 import { get, post, put, del } from "./apiClient.js";
 import { showTabs } from "../utils/tabs.js";
 import { isLoggedIn, loadUser } from "../utils/storage.js";
+import { renderListingCard } from "../components/listingCard.js";
 
 const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -25,7 +26,6 @@ async function fetchAndRenderProfile() {
     const myCredits = document.getElementById("my-credits");
     const numberOfListings = document.getElementById("my-listings-amount");
     const numberOfWins = document.getElementById("my-wins-amount");
-    const myListingsContainer = document.getElementById("my-listings");
 
     banner.src = data.banner.url;
     avatar.src = data.avatar.url;
@@ -39,8 +39,16 @@ async function fetchAndRenderProfile() {
     myCredits.textContent = data.credits;
     numberOfListings.textContent = data.listings.length;
     numberOfWins.textContent = data.wins.length;
+
+    //my bids
+
+    //my listings
+    const listingsResponse = await get(
+      `auction/profiles/${loadUser().name}/listings?_bids=true&_seller=true`,
+    );
+    renderListingCard(listingsResponse.data);
   } catch (error) {
-    console.error("error:", error);
+    console.error("fetchAndRenderProfile error:", error);
   }
 }
 fetchAndRenderProfile();
