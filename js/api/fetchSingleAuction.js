@@ -1,6 +1,8 @@
 import { get } from "./apiClient.js";
 import { formatMilliseconds } from "../utils/formatter.js";
 import { showTabs } from "../utils/tabs.js";
+import { showBidModal } from "../components/bidModal.js";
+import { loadUser } from "../utils/storage";
 
 const itemId = new URLSearchParams(window.location.search).get("id");
 const itemTitle = document.getElementById("item-title");
@@ -19,7 +21,7 @@ async function fetchAndRenderListing() {
     const bids = listing.bids;
     const images = listing.media;
 
-    console.log(listing);
+    console.log(data);
 
     // tabs
     showTabs();
@@ -121,6 +123,16 @@ async function fetchAndRenderListing() {
     } else {
       displayTimeContainer.innerHTML = `${formattedCountdown}`;
     }
+
+    //open modal (place bid)
+    const openModalBtn = document.getElementById("place-bid-btn");
+    const user = loadUser();
+    if (!user || listing.seller.name === user.name) {
+      openModalBtn.classList.add("hidden");
+    } else {
+      openModalBtn.classList.remove("hidden");
+    }
+    openModalBtn.addEventListener("click", () => showBidModal(listing));
 
     //bids
     const currentHighestBid = document.getElementById("highest-bid");

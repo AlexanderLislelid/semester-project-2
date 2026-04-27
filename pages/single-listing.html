@@ -51,9 +51,10 @@
             <div id="item-information" class="tab-content">
               <p id="item-description" class="mb-6"></p>
               <div id="item-seller"></div>
+
               <div
                 id="item-stats"
-                class="mt-6 overflow-hidden rounded-md shadow-md"
+                class="mt-6 flex flex-col overflow-hidden rounded-md shadow-md"
               >
                 <div
                   class="border-edges flex flex-col items-center border-b px-6 py-4"
@@ -79,6 +80,7 @@
                       <p id="highest-bid"></p>
                     </div>
                   </div>
+
                   <div class="flex flex-col items-center px-6 py-4">
                     <p
                       class="text-text-secondary text-2xs mb-1 font-medium tracking-widest uppercase"
@@ -91,6 +93,12 @@
                     </div>
                   </div>
                 </div>
+                <button
+                  class="btn-primary-form mx-2 flex items-center justify-center"
+                  id="place-bid-btn"
+                >
+                  Place bid
+                </button>
               </div>
             </div>
             <div id="item-bid-history" class="tab-content hidden">
