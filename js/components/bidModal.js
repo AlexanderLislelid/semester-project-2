@@ -2,7 +2,10 @@ import { showToast } from "./toasts.js";
 import { post } from "../api/apiClient.js";
 
 export function showBidModal(listing) {
-  const highestBid = listing.bids[listing.bids.length - 1].amount;
+  const highestBid =
+    listing.bids.length > 0
+      ? listing.bids[listing.bids.length - 1].amount
+      : 0;
   const listingTitle = listing.title;
 
   const overlay = document.createElement("div");
@@ -18,7 +21,7 @@ export function showBidModal(listing) {
           <p class="text-text-secondary mt-1 text-sm">
             Current bid:
             <span class="font-medium text-teal-600">
-              <i class="fa-regular fa-coins mr-1"></i>${highestBid}
+              ${highestBid > 0 ? `<i class="fa-regular fa-coins mr-1"></i>${highestBid}` : "No bids yet"}
             </span>
           </p>
         </div>
