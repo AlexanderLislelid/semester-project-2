@@ -137,7 +137,7 @@ async function fetchAndRenderListing() {
     //bids
     const currentHighestBid = document.getElementById("highest-bid");
     const numberOfBids = document.getElementById("number-of-bids");
-    currentHighestBid.textContent = bids.at(-1).amount;
+    currentHighestBid.textContent = bids.at(-1)?.amount ?? 0;
     numberOfBids.textContent = bids.length;
 
     itemTitle.textContent = listing.title;
