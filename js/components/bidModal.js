@@ -3,9 +3,7 @@ import { post } from "../api/apiClient.js";
 
 export function showBidModal(listing) {
   const highestBid =
-    listing.bids.length > 0
-      ? listing.bids[listing.bids.length - 1].amount
-      : 0;
+    listing.bids.length > 0 ? listing.bids[listing.bids.length - 1].amount : 0;
   const listingTitle = listing.title;
 
   const overlay = document.createElement("div");
@@ -69,6 +67,7 @@ export function showBidModal(listing) {
       await post(`auction/listings/${listing.id}/bids`, { amount });
       showToast("Bid placed!", `You bid ${amount} credits`, "success");
       overlay.remove();
+      window.location.reload();
     } catch (error) {
       showToast("Bid failed", error.message, "error");
     }
