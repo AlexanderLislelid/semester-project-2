@@ -1,4 +1,9 @@
 export function showLoader() {
+  let loader = document.getElementById("loader");
+  if (loader) {
+    loader.classList.remove("hidden");
+    return;
+  }
   document.body.insertAdjacentHTML(
     "beforeend",
     `<div id="loader" class="fixed inset-0 z-50 flex h-screen w-screen items-center justify-center bg-white/10 backdrop-blur-sm">
@@ -9,5 +14,5 @@ export function showLoader() {
 
 export function hideLoader() {
   const loader = document.getElementById("loader");
-  loader.classList.add("hidden");
+  if (loader) loader.remove();
 }
