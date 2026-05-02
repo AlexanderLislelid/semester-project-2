@@ -44,9 +44,36 @@ async function fetchAndRenderProfile() {
 
     //my bids
     const myBidsResponse = await get(
-      `auction/profiles/${loadUser().name}/bids`,
+      `auction/profiles/${loadUser().name}/bids?_listings=true`,
     );
-    console.log(myBidsResponse);
+    const container = document.getElementById("my-bids-container");
+    myBidsResponse.data.forEach((element) => {
+      const bid = document.createElement("div");
+      bid.className =
+        "flex items-center justify-between rounded-md border border-gray-200 bg-white px-4 py-3 shadow-sm";
+
+      const info = document.createElement("div");
+
+      const title = document.createElement("h3");
+      title.className = "font-medium";
+      title.textContent = element.listing.title;
+
+      const amount = document.createElement("p");
+      amount.className = "text-text-secondary text-sm";
+      amount.textContent = `Your bid: ${element.amount} credits`;
+
+      info.append(title, amount);
+
+      const link = document.createElement("a");
+      link.href = `${BASE_PATH}/pages/single-listing.html?id=${element.listing.id}`;
+      link.className =
+        "rounded bg-teal-600 px-3 py-1 text-sm text-white hover:bg-teal-700";
+      link.textContent = "View";
+
+      bid.append(info, link);
+      container.appendChild(bid);
+    });
+
     //my listings
     const listingsResponse = await get(
       `auction/profiles/${loadUser().name}/listings?_bids=true&_seller=true`,
