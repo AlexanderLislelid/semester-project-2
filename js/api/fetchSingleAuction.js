@@ -4,6 +4,7 @@ import { showTabs } from "../utils/tabs.js";
 import { showBidModal } from "../components/bidModal.js";
 import { loadUser } from "../utils/storage";
 import { showLoader, hideLoader } from "../components/loader.js";
+import { showToast } from "../components/toasts.js";
 
 const itemId = new URLSearchParams(window.location.search).get("id");
 const itemTitle = document.getElementById("item-title");
@@ -147,6 +148,7 @@ async function fetchAndRenderListing() {
 
     tags.textContent = listing.tags.join(" / ");
   } catch (error) {
+    showToast("Something went wrong", error.message, "error");
     console.error("Error fetching listing:", error);
   } finally {
     hideLoader();

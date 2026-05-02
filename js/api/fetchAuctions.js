@@ -1,6 +1,7 @@
 import { get } from "./apiClient.js";
 import { renderListingCard } from "../components/listingCard.js";
 import { showLoader, hideLoader } from "../components/loader.js";
+import { showToast } from "../components/toasts.js";
 
 const postContainer = document.getElementById("listings-container");
 const itemsCount = document.getElementById("items");
@@ -77,6 +78,7 @@ async function fetchAndRenderAuctions(page, search = "") {
       prevPageBtn.disabled = true;
     }
   } catch (error) {
+    showToast("Something went wrong", error.message, "error");
     console.error("Failed to fetch auctions:", error);
   } finally {
     isFetching = false;

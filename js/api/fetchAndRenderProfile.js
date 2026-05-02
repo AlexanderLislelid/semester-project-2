@@ -3,6 +3,7 @@ import { showTabs } from "../utils/tabs.js";
 import { isLoggedIn, loadUser } from "../utils/storage.js";
 import { renderListingCard } from "../components/listingCard.js";
 import { showLoader, hideLoader } from "../components/loader.js";
+import { showToast } from "../components/toasts.js";
 
 const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -50,6 +51,7 @@ async function fetchAndRenderProfile() {
     );
     renderListingCard(listingsResponse.data);
   } catch (error) {
+    showToast("Something went wrong", error.message, "error");
     console.error("fetchAndRenderProfile error:", error);
   } finally {
     hideLoader();
