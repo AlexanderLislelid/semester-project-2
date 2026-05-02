@@ -19,7 +19,6 @@ async function fetchAndRenderProfile() {
       `auction/profiles/${loadUser().name}?_bids=true&_listings=true&_wins=true`,
     );
     const data = response.data;
-    console.log(data);
 
     const banner = document.getElementById("my-banner");
     const avatar = document.getElementById("my-avatar");
@@ -44,7 +43,10 @@ async function fetchAndRenderProfile() {
     numberOfWins.textContent = data.wins.length;
 
     //my bids
-
+    const myBidsResponse = await get(
+      `auction/profiles/${loadUser().name}/bids`,
+    );
+    console.log(myBidsResponse);
     //my listings
     const listingsResponse = await get(
       `auction/profiles/${loadUser().name}/listings?_bids=true&_seller=true`,
