@@ -1,5 +1,6 @@
 import { get } from "./apiClient.js";
 import { renderListingCard } from "../components/listingCard.js";
+import { showLoader, hideLoader } from "../components/loader.js";
 
 const postContainer = document.getElementById("listings-container");
 const itemsCount = document.getElementById("items");
@@ -18,6 +19,7 @@ let currentSearch = "";
 let isFetching = false;
 
 async function fetchAndRenderAuctions(page, search = "") {
+  showLoader();
   isFetching = true;
   try {
     let url;
@@ -78,6 +80,7 @@ async function fetchAndRenderAuctions(page, search = "") {
     console.error("Failed to fetch auctions:", error);
   } finally {
     isFetching = false;
+    hideLoader();
   }
 }
 

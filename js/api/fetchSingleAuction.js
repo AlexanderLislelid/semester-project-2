@@ -3,6 +3,7 @@ import { formatMilliseconds } from "../utils/formatter.js";
 import { showTabs } from "../utils/tabs.js";
 import { showBidModal } from "../components/bidModal.js";
 import { loadUser } from "../utils/storage";
+import { showLoader, hideLoader } from "../components/loader.js";
 
 const itemId = new URLSearchParams(window.location.search).get("id");
 const itemTitle = document.getElementById("item-title");
@@ -12,6 +13,7 @@ const tags = document.getElementById("tags");
 
 async function fetchAndRenderListing() {
   try {
+    showLoader();
     const data = await get(
       `auction/listings/${itemId}?_seller=true&_bids=true`,
     );
@@ -146,6 +148,8 @@ async function fetchAndRenderListing() {
     tags.textContent = listing.tags.join(" / ");
   } catch (error) {
     console.error("Error fetching listing:", error);
+  } finally {
+    hideLoader();
   }
 }
 
