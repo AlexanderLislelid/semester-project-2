@@ -110,7 +110,7 @@ async function fetchAndRenderListing() {
         thumbnailRow.append(wrapper);
       });
     } else {
-      expandedImg.src = "/images/placeholder.png";
+      expandedImg.src = `${BASE_PATH}/images/placeholder.png`;
       expandedImg.alt = "";
     }
 
