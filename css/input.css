@@ -45,6 +45,10 @@
   @apply bg-edges/20 hover:bg-edges my-2 cursor-pointer rounded-md border border-gray-300 px-4 py-2 text-sm;
 }
 
+.btn-delete-form {
+  @apply my-2 cursor-pointer rounded-md border border-red-400 bg-red-100 px-4 py-2 text-sm hover:bg-red-200;
+}
+
 .btn-filter {
   @apply rounded-full border border-teal-600 px-4 py-1.5 text-sm transition hover:bg-teal-600 hover:text-white;
 }

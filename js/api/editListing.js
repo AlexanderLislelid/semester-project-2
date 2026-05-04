@@ -18,6 +18,7 @@ const addMedia = document.getElementById("media-add");
 const mediaUrl = document.getElementById("media-url");
 const mediaAlt = document.getElementById("media-alt");
 const endDate = document.getElementById("listing-end");
+const deleteBtn = document.getElementById("delete-btn");
 
 const images = [];
 
@@ -85,6 +86,20 @@ form.addEventListener("submit", async (event) => {
     }, 2000);
   } catch (error) {
     console.error(error);
+    showToast("Something went wrong!", error.message, "danger");
+  }
+});
+
+deleteBtn.addEventListener("click", async () => {
+  const popover = document.getElementById("delete-confirmation");
+  try {
+    await del(`auction/listings/${itemId}`);
+    showToast("Success", "Listing Deleted", "success");
+    popover.hidePopover();
+    setTimeout(() => {
+      window.location.href = `index.html`;
+    }, 2000);
+  } catch (error) {
     showToast("Something went wrong!", error.message, "danger");
   }
 });
