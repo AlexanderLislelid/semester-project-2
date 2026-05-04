@@ -43,7 +43,7 @@ export function renderListingCard(listings) {
       img.src = listing.media[0].url;
       img.alt = listing.media[0].alt;
     } else {
-      img.src = "/images/placeholder.png";
+      img.src = `${BASE_PATH}/images/placeholder.png`;
       img.alt = "";
     }
 
@@ -72,7 +72,7 @@ export function renderListingCard(listings) {
     bidWrapper.className =
       "flex items-center justify-between mt-3 pt-3 border-t border-gray-100";
     btn.className =
-      "flex items-center justify-center py-2 bg-teal-600 mt-3 text-white text-sm font-medium hover:bg-teal-700 rounded-md transition-colors";
+      "flex items-center justify-center py-2 bg-teal-600 mt-3 text-white text-sm font-medium hover:bg-teal-700 rounded-md transition-colors cursor-pointer";
 
     if (listing.tags && listing.tags.length > 0) {
       listing.tags.forEach((tag) => {
