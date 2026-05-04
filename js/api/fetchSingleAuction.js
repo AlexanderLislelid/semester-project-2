@@ -6,6 +6,8 @@ import { loadUser } from "../utils/storage";
 import { showLoader, hideLoader } from "../components/loader.js";
 import { showToast } from "../components/toasts.js";
 
+const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 const itemId = new URLSearchParams(window.location.search).get("id");
 const itemTitle = document.getElementById("item-title");
 const itemDescription = document.getElementById("item-description");
@@ -136,6 +138,17 @@ async function fetchAndRenderListing() {
       openModalBtn.classList.remove("hidden");
     }
     openModalBtn.addEventListener("click", () => showBidModal(listing));
+
+    //Edit Listing
+    const editBtn = document.getElementById("edit-btn");
+    if (user && listing.seller.name === user.name) {
+      editBtn.classList.remove("hidden");
+      editBtn.addEventListener("click", () => {
+        window.location.href = `${BASE_PATH}/pages/edit-listing.html?id=${itemId}`;
+      });
+    } else {
+      editBtn.classList.add("hidden");
+    }
 
     //bids
     const currentHighestBid = document.getElementById("highest-bid");
