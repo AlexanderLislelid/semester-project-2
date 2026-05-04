@@ -65,6 +65,10 @@
   @apply border-teal-600 bg-teal-600 text-white hover:border-teal-700 hover:bg-teal-700 hover:text-white;
 }
 
+[popover]::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 @layer base {
   body {
     font-family: var(--font-sans);

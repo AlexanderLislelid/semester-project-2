@@ -1,5 +1,5 @@
 import { isLoggedIn } from "../utils/storage.js";
-import { put, get } from "../api/apiClient.js";
+import { put, get, del } from "../api/apiClient.js";
 import { showToast } from "../components/toasts.js";
 
 const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "");

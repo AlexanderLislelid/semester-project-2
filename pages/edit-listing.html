@@ -103,7 +103,35 @@
         </div>
         <div class="flex justify-end gap-4">
           <a href="../index.html" class="btn-cancel-form">Cancel</a>
-          <button type="submit" class="btn-primary-form">Create listing</button>
+          <button type="submit" class="btn-primary-form">Update listing</button>
+        </div>
+        <button
+          popovertarget="delete-confirmation"
+          type="button"
+          class="cursor-pointer rounded-md border border-red-500 bg-red-400 py-2 text-sm text-white hover:bg-red-500"
+        >
+          Delete Listing
+        </button>
+        <div
+          id="delete-confirmation"
+          popover
+          class="mx-auto my-auto rounded-md border border-red-300 bg-red-100 p-4"
+        >
+          <div class="mb-2 flex justify-between">
+            <h2 class="text-xl">Warning</h2>
+            <button
+              type="button"
+              popovertarget="delete-confirmation"
+              popovertargetaction="close"
+            >
+              Close
+            </button>
+          </div>
+          <p>Are you sure you want to delete your listing?</p>
+          <div class="flex gap-4">
+            <button type="button">Yes</button>
+            <button type="button">No</button>
+          </div>
         </div>
       </form>
     </main>
