@@ -66,8 +66,7 @@ async function fetchAndRenderProfile() {
 
       const link = document.createElement("a");
       link.href = `${BASE_PATH}/pages/single-listing.html?id=${element.listing.id}`;
-      link.className =
-        "rounded bg-teal-600 px-3 py-1 text-sm text-white hover:bg-teal-700";
+      link.className = "btn-primary-form";
       link.textContent = "View";
 
       bid.append(info, link);
