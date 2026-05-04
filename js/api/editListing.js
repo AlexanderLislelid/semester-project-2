@@ -97,7 +97,7 @@ deleteBtn.addEventListener("click", async () => {
     showToast("Success", "Listing Deleted", "success");
     popover.hidePopover();
     setTimeout(() => {
-      window.location.href = `index.html`;
+      window.location.href = `${BASE_PATH}/pages/profile.html`;
     }, 2000);
   } catch (error) {
     showToast("Something went wrong!", error.message, "danger");
