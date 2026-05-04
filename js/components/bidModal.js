@@ -67,7 +67,9 @@ export function showBidModal(listing) {
       await post(`auction/listings/${listing.id}/bids`, { amount });
       showToast("Bid placed!", `You bid ${amount} credits`, "success");
       overlay.remove();
-      window.location.reload();
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     } catch (error) {
       showToast("Bid failed", error.message, "error");
     }
