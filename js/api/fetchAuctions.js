@@ -25,38 +25,22 @@ async function fetchAndRenderAuctions(page, search = "") {
   try {
     let url;
 
-    if (search) {
-      const params = new URLSearchParams({
-        q: search,
-        page: page,
-        limit: 20,
-        _bids: true,
-        _seller: true,
-      });
-      url = `auction/listings/search?${params.toString()}`;
+    let sort, sortOrder;
+    if (currentSort === "ending-soon") {
+      sort = "endsAt";
+      sortOrder = "asc";
+    } else if (currentSort === "oldest") {
+      sort = "created";
+      sortOrder = "asc";
     } else {
-      let sort, sortOrder;
-      if (currentSort === "ending-soon") {
-        sort = "endsAt";
-        sortOrder = "asc";
-      } else if (currentSort === "oldest") {
-        sort = "created";
-        sortOrder = "asc";
-      } else {
-        sort = "created";
-        sortOrder = "desc";
-      }
+      sort = "created";
+      sortOrder = "desc";
+    }
 
-      const params = new URLSearchParams({
-        page: page,
-        limit: 20,
-        _bids: true,
-        _seller: true,
-        _active: true,
-        sort: sort,
-        sortOrder: sortOrder,
-      });
-      url = `auction/listings?${params.toString()}`;
+    if (search) {
+      url = `auction/listings/search?q=${search}&page=${page}&limit=20&_bids=true&_seller=true&sort=${sort}&sortOrder=${sortOrder}`;
+    } else {
+      url = `auction/listings?page=${page}&limit=20&_bids=true&_seller=true&_active=true&sort=${sort}&sortOrder=${sortOrder}`;
     }
 
     const response = await get(url);
