@@ -37,7 +37,64 @@ npm run dev
 ```
 semester-project-2/
 ├── index.html
-
+├── vite.config.js
+├── eslint.config.mjs
+├── package.json
+├── .prettierrc
+├── .env.example
+│
+├── pages/
+│   ├── login.html
+│   ├── register.html
+│   ├── profile.html
+│   ├── single-listing.html
+│   ├── create-listing.html
+│   ├── edit-listing.html
+│   └── edit-profile.html
+│
+├── js/
+│   ├── api/
+│   │   ├── apiClient.js
+│   │   ├── fetchAuctions.js
+│   │   ├── fetchSingleAuction.js
+│   │   ├── fetchAndRenderProfile.js
+│   │   ├── createListing.js
+│   │   ├── editListing.js
+│   │   └── editProfile.js
+│   │
+│   ├── auth/
+│   │   ├── login.js
+│   │   └── register.js
+│   │
+│   ├── components/
+│   │   ├── listingCard.js
+│   │   ├── bidModal.js
+│   │   ├── nav.js
+│   │   ├── renderNav.js
+│   │   ├── footer.js
+│   │   ├── loader.js
+│   │   └── toasts.js
+│   │
+│   └── utils/
+│       ├── formatter.js
+│       ├── storage.js
+│       └── tabs.js
+│
+├── css/
+│   └── input.css
+│
+├── images/
+│   ├── gavel-hero.jpg
+│   └── gavel-hero-2.jpg
+│
+├── public/
+│   └── images/
+│       └── placeholder.png
+│
+└── favicon_io/
+    ├── favicon.ico
+    ├── favicon-32x32.png
+    └── about.txt
 ```
 
 ## API
