@@ -1,4 +1,4 @@
-import { get, post, put, del } from "./apiClient.js";
+import { get } from "./apiClient.js";
 import { showTabs } from "../utils/tabs.js";
 import { isLoggedIn, loadUser } from "../utils/storage.js";
 import { renderListingCard } from "../components/listingCard.js";

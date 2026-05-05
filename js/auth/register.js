@@ -16,7 +16,7 @@ form.addEventListener("submit", async (e) => {
     return;
   }
   try {
-    const data = await post("auth/register", {
+    await post("auth/register", {
       name: form.name.value,
       email: form.email.value,
       password: form.password.value,

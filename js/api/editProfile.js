@@ -22,6 +22,7 @@ async function fetchProfileInfo() {
       bioInput.placeholder = data.bio;
     }
   } catch (error) {
+    console.error(error);
     showToast("Error", "Could not load profile data.", "error");
   }
 }

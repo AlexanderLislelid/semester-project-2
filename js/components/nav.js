@@ -34,7 +34,6 @@ async function getUserProfile() {
 
     const name = profile.name;
     const email = profile.email;
-    const avatar = profile.avatar;
     const credits = profile.credits;
 
     // mobile profile
@@ -80,6 +79,7 @@ async function getUserProfile() {
     creditsContainerDesktop.className = "px-2 py-4 bg-teal-600 text-white";
     creditsContainerDesktop.innerHTML = `<i class="fa-regular fa-coins mr-2"></i>${credits}`;
   } catch (error) {
+    console.error(error);
     const errEl = document.createElement("p");
     errEl.textContent = "Could not load profile.";
     errEl.className = "text-red-500 text-sm";
