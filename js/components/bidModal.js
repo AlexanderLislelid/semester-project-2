@@ -61,6 +61,7 @@ export function showBidModal(listing) {
         `Bid must be higher than ${highestBid}`,
         "error",
       );
+      return;
     }
 
     try {
