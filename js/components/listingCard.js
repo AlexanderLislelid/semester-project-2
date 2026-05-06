@@ -71,8 +71,7 @@ export function renderListingCard(listings) {
     bidCount.className = "text-xs text-text-secondary";
     bidWrapper.className =
       "flex items-center justify-between mt-3 pt-3 border-t border-gray-100";
-    btn.className =
-      "flex items-center justify-center py-2 bg-teal-600 mt-3 text-white text-sm font-medium hover:bg-teal-700 rounded-md transition-colors cursor-pointer";
+    btn.className = "btn-primary-form mt-3";
 
     if (listing.tags && listing.tags.length > 0) {
       listing.tags.forEach((tag) => {
@@ -91,7 +90,7 @@ export function renderListingCard(listings) {
       btn.classList.remove("hidden");
     }
 
-    btn.textContent = "Bid on item";
+    btn.innerHTML = `<i class="fa-regular fa-gavel mr-1.5"></i>Bid on item`;
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       showBidModal(listing);
