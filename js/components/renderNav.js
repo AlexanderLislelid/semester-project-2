@@ -49,7 +49,7 @@ export function renderNav() {
           </a>
         </li>
       </ul>
-      <div id="logout-menu" class="bg-dark-bg flex-flex-col p-6 text-white">
+      <div id="logout-menu" class="bg-dark-bg flex flex-col p-6 text-white">
         <div class="flex justify-between">
           <p class="font-light">Credits</p>
           <span id="credits-mobile-menu" class="text-bold bg-dark-highlights flex items-center gap-2 rounded-full px-4 py-1">
@@ -108,7 +108,7 @@ export function renderNav() {
           </a>
         </li>
       </ul>
-      <div id="logout-menu-desktop" class="bg-dark-bg flex-flex-col p-6 text-white">
+      <div id="logout-menu-desktop" class="bg-dark-bg flex flex-col p-6 text-white">
         <div class="flex justify-between"></div>
         <button id="logout-desktop" class="bg-dark-highlights mt-6 w-full cursor-pointer rounded-md py-2 text-center hover:border hover:border-gray-500">
           <i class="fa-regular fa-arrow-left-from-bracket mr-2" aria-hidden="true"></i>
