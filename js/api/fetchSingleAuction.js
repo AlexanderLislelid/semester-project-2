@@ -26,8 +26,6 @@ async function fetchAndRenderListing() {
     const bids = listing.bids;
     const images = listing.media;
 
-    console.log(data);
-
     // tabs
     showTabs();
 

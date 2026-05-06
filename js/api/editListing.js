@@ -26,7 +26,6 @@ async function fillForm() {
   try {
     const response = await get(`auction/listings/${itemId}`);
     const item = response.data;
-    console.log(item);
     itemTitle.value = item.title;
     itemDescription.value = item.description;
     tags.value = item.tags;
@@ -57,7 +56,6 @@ async function fillForm() {
     });
 
     item.media.forEach(renderImage);
-    console.log(images);
   } catch (error) {
     console.error(error);
     showToast("Something went wrong!", error.message, "danger");
