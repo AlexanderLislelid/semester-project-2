@@ -76,7 +76,8 @@ async function getUserProfile() {
 
     // credits
     creditsContainer.innerHTML = `<i class="fa-regular fa-coins text-teal-500 text-xl"></i>${credits}`;
-    creditsContainerDesktop.className = "px-2 py-4 bg-teal-600 text-white";
+    creditsContainerDesktop.className =
+      "px-2 py-4 border border-teal-600 bg-teal-600 text-white";
     creditsContainerDesktop.innerHTML = `<i class="fa-regular fa-coins mr-2"></i>${credits}`;
   } catch (error) {
     console.error(error);
@@ -117,9 +118,16 @@ if (!loadToken()) {
             class="px-6 py-4 hover:bg-gray-200 block cursor-pointer"
             aria-label="Toggle profile menu"
             aria-expanded="false"
+            id="desktop-submenu-toggle"
             ><i class="fa-regular fa-user mr-2" aria-hidden="true"></i>Profile</button
           >`;
   const desktopBtn = toggleDesktopMenu.querySelector("button");
+  if (
+    window.location.pathname === `${BASE_PATH}/pages/profile.html` ||
+    window.location.pathname === `${BASE_PATH}/pages/edit-profile.html`
+  ) {
+    desktopBtn.classList.add("border-b-2", "border-teal-600", "bg-gray-100");
+  }
   toggleDesktopMenu.addEventListener("click", () => {
     const isHidden = desktopMenu.classList.toggle("hidden");
     desktopBtn.setAttribute("aria-expanded", !isHidden);

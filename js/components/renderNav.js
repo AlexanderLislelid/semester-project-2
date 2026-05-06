@@ -15,7 +15,7 @@ export function renderNav() {
         <i class="fa-solid fa-angle-down text-xl" aria-hidden="true"></i>
       </button>
     </nav>
-    <div id="nav-mobile-menu" class="bg-background absolute top-12.5 z-50 hidden w-full">
+    <div id="nav-mobile-menu" class="bg-background absolute top-12 z-50 hidden w-full">
       <div id="mobile-menu-profile" class="border-b-edges flex items-center justify-between gap-6 border-b px-6 py-4 text-end"></div>
       <ul>
         <li>
@@ -36,16 +36,6 @@ export function renderNav() {
         <li>
           <a href="${BASE_PATH}/pages/edit-profile.html" class="border-b-edges block border-b py-3 hover:bg-gray-200">
             <i class="fa-regular fa-user-pen mr-4 ml-6 text-xl" aria-hidden="true"></i>Edit Profile
-          </a>
-        </li>
-        <li>
-          <a href="${BASE_PATH}/pages/profile.html" class="border-b-edges block border-b py-3 hover:bg-gray-200">
-            <i class="fa-regular fa-gavel mr-4 ml-6 text-xl" aria-hidden="true"></i>My Bids
-          </a>
-        </li>
-        <li>
-          <a href="${BASE_PATH}/pages/profile.html" class="border-b-edges block border-b py-3 hover:bg-gray-200">
-            <i class="fa-regular fa-tag mr-4 ml-6 text-xl" aria-hidden="true"></i>My Listings
           </a>
         </li>
       </ul>
@@ -84,7 +74,7 @@ export function renderNav() {
         <li id="credits-desktop"></li>
       </ul>
     </nav>
-    <div id="desktop-dropdown" class="bg-background absolute top-14.5 right-0 z-50 hidden w-84">
+    <div id="desktop-dropdown" class="bg-background absolute top-14 right-0 z-50 hidden w-84">
       <div id="desktop-dropdown-profile" class="border-b-edges flex items-center justify-between border-b px-6 py-4"></div>
       <ul>
         <li>
@@ -96,17 +86,7 @@ export function renderNav() {
           <a href="${BASE_PATH}/pages/edit-profile.html" class="border-b-edges block border-b py-3 hover:border-l-8 hover:border-teal-600 hover:bg-gray-200">
             <i class="fa-regular fa-user-pen mr-4 ml-6 text-xl" aria-hidden="true"></i>Edit Profile
           </a>
-        </li>
-        <li>
-          <a href="${BASE_PATH}/pages/profile.html" class="border-b-edges block border-b py-3 hover:border-l-8 hover:border-teal-600 hover:bg-gray-200">
-            <i class="fa-regular fa-gavel mr-4 ml-6 text-xl" aria-hidden="true"></i>My Bids
-          </a>
-        </li>
-        <li>
-          <a href="${BASE_PATH}/pages/profile.html" class="border-b-edges block border-b py-3 hover:border-l-8 hover:border-teal-600 hover:bg-gray-200">
-            <i class="fa-regular fa-tag mr-4 ml-6 text-xl" aria-hidden="true"></i>My Listings
-          </a>
-        </li>
+        </li>   
       </ul>
       <div id="logout-menu-desktop" class="bg-dark-bg flex flex-col p-6 text-white">
         <div class="flex justify-between"></div>
@@ -119,18 +99,22 @@ export function renderNav() {
   `,
   );
 
-  const currentPath = window.location.pathname.replace(BASE_PATH, "") || "/index.html";
+  const currentPath =
+    window.location.pathname.replace(BASE_PATH, "") || "/index.html";
 
-  document.querySelectorAll("#nav-mobile-menu a, #nav-desktop a, #desktop-dropdown a").forEach((link) => {
-    const linkPath = new URL(link.href).pathname.replace(BASE_PATH, "");
-    if (linkPath === currentPath) {
-      if (link.closest("#nav-desktop")) {
-        link.classList.add("border-b-2", "border-teal-600", "bg-gray-100");
-      } else if (link.closest("#desktop-dropdown")) {
-        link.classList.add("border-l-8", "border-teal-600", "bg-gray-200");
-      } else {
-        link.classList.add("border-l-4", "border-teal-600", "bg-gray-100");
+  document
+    .querySelectorAll("#nav-mobile-menu a, #nav-desktop a, #desktop-dropdown a")
+    .forEach((link) => {
+      const linkPath = new URL(link.href).pathname.replace(BASE_PATH, "");
+      if (linkPath === currentPath) {
+        if (link.closest("#nav-desktop")) {
+          link.classList.add("border-b-2", "border-teal-600", "bg-gray-100");
+        } else if (link.closest("#desktop-dropdown")) {
+          link.classList.add("border-l-8", "border-teal-600", "bg-gray-200");
+        } else {
+          link.classList.add("border-l-4", "border-teal-600", "bg-gray-100");
+        }
       }
-    }
-  });
+    });
 }
+
