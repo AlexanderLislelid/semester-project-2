@@ -1,6 +1,7 @@
 import { isLoggedIn } from "../utils/storage.js";
 import { put, get, del } from "../api/apiClient.js";
 import { showToast } from "../components/toasts.js";
+import { redirectTimer } from "../utils/timeout.js";
 
 const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -79,9 +80,7 @@ form.addEventListener("submit", async (event) => {
   try {
     await put(`auction/listings/${itemId}`, body);
     showToast("Success", "Listing updated!", "success");
-    setTimeout(() => {
-      window.location.href = `${BASE_PATH}/pages/single-listing.html?id=${itemId}`;
-    }, 2000);
+    redirectTimer(2000, `pages/single-listing.html?id=${itemId}`);
   } catch (error) {
     console.error(error);
     showToast("Something went wrong!", error.message, "danger");
@@ -94,9 +93,7 @@ deleteBtn.addEventListener("click", async () => {
     await del(`auction/listings/${itemId}`);
     showToast("Success", "Listing Deleted", "success");
     popover.hidePopover();
-    setTimeout(() => {
-      window.location.href = `${BASE_PATH}/pages/profile.html`;
-    }, 2000);
+    redirectTimer(2000, "pages/profile.html");
   } catch (error) {
     showToast("Something went wrong!", error.message, "danger");
   }

@@ -1,8 +1,7 @@
 import { get, put } from "../api/apiClient.js";
 import { loadUser } from "../utils/storage.js";
 import { showToast } from "../components/toasts.js";
-
-const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "");
+import { redirectTimer } from "../utils/timeout.js";
 
 const form = document.getElementById("edit-profile");
 const avatarInput = document.getElementById("avatar");
@@ -40,10 +39,12 @@ form.addEventListener("submit", async (e) => {
     if (bioInput.value) body.bio = bioInput.value;
 
     await put(`auction/profiles/${loadUser().name}`, body);
-    showToast("Profile Updated", "Your profile was updated successfully!", "success");
-    setTimeout(() => {
-      window.location.href = `${BASE_PATH}/pages/profile.html`;
-    }, 2500);
+    showToast(
+      "Profile Updated",
+      "Your profile was updated successfully!",
+      "success",
+    );
+    redirectTimer(2000, "pages/profile.html");
   } catch (error) {
     showToast("Error", `${error.message}`, "error");
   }

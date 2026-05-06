@@ -1,5 +1,6 @@
 import { post } from "../api/apiClient.js";
 import { showToast } from "../components/toasts.js";
+import { redirectTimer } from "../utils/timeout.js";
 
 const form = document.getElementById("registration-form");
 const errorWrapper = document.getElementById("error-wrapper");
@@ -23,9 +24,7 @@ form.addEventListener("submit", async (e) => {
     });
     showToast("Register Successful", "Redirecting to Login page", "success");
     errorWrapper.classList.add("hidden");
-    setTimeout(() => {
-      window.location.href = "./login.html";
-    }, 2000);
+    redirectTimer(2000, "pages/login.html");
   } catch (error) {
     errorWrapper.append(error.message);
     errorWrapper.classList.remove("hidden");

@@ -1,6 +1,7 @@
 import { isLoggedIn } from "../utils/storage.js";
 import { post } from "../api/apiClient.js";
 import { showToast } from "../components/toasts.js";
+import { redirectTimer } from "../utils/timeout.js";
 
 const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -70,9 +71,7 @@ form.addEventListener("submit", async (e) => {
     };
     const data = await post("auction/listings", body);
     showToast("Auction Created", "Auction created successfully!", "success");
-    setTimeout(() => {
-      window.location.href = `${BASE_PATH}/pages/single-listing.html?id=${data.data.id}`;
-    }, 2500);
+    redirectTimer(2500, `pages/single-listing.html?id=${data.data.id}`);
   } catch (error) {
     showToast("Error", `${error.message}`, "error");
     console.error(error);
