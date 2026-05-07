@@ -11,19 +11,19 @@ function initFooter() {
             collectibles. Trusted by students worldwide since 2026.
           </p>
           <div class="flex gap-4 mt-10 text-teal-600 text-2xl">
-            <a href="facebook.com" aria-label="Facebook"
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"
               ><i class="fa-brands fa-facebook" aria-hidden="true"></i
             ></a>
-            <a href="twitter.com" aria-label="Twitter"
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"
               ><i class="fa-brands fa-twitter" aria-hidden="true"></i
             ></a>
-            <a href="instagram.com" aria-label="Instagram"
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"
               ><i
                 class="fa-brands fa-square-instagram"
                 aria-hidden="true"
               ></i
             ></a>
-            <a href="linkedin.com" aria-label="LinkedIn"
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"
               ><i class="fa-brands fa-square-linkedin" aria-hidden="true"></i
             ></a>
           </div>
@@ -52,7 +52,7 @@ function initFooter() {
         <a href="#" class="mt-6 hover:text-white">Privacy</a>
         <a href="#" class="mt-6 hover:text-white">Cookies</a>
       </div>
-      <p class="text-text-secondary text-center mt-8 text-sm p-2 font-light">
+      <p class="text-gray-400 text-center mt-8 text-sm p-2 font-light">
         &copy;2026 Gavel. All rights reserved
       </p>
     </footer>`);

@@ -8,7 +8,7 @@ export function renderNav() {
       <div class="px-2 pb-2 leading-1">
         <a href="${BASE_PATH}/index.html">
           <p class="font-heading text-2xl tracking-wider">GAVEL</p>
-          <p class="text-2xs text-text-secondary text-center">AUCTION HOUSE</p>
+          <p class="text-2xs text-gray-500 text-center">AUCTION HOUSE</p>
         </a>
       </div>
       <button id="nav-mobile-toggle" class="bg-teal-600 px-4 py-3 text-white" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -117,4 +117,3 @@ export function renderNav() {
       }
     });
 }
-
