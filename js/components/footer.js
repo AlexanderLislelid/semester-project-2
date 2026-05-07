@@ -11,20 +11,20 @@ function initFooter() {
             collectibles. Trusted by students worldwide since 2026.
           </p>
           <div class="flex gap-4 mt-10 text-teal-600 text-2xl">
-            <a href="facebook.com"
-              ><i class="fa-brands fa-facebook" aria-label="Facebook"></i
+            <a href="facebook.com" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook" aria-hidden="true"></i
             ></a>
-            <a href="twitter.com"
-              ><i class="fa-brands fa-twitter" aria-label="twitter"></i
+            <a href="twitter.com" aria-label="Twitter"
+              ><i class="fa-brands fa-twitter" aria-hidden="true"></i
             ></a>
-            <a href="instagram.com"
+            <a href="instagram.com" aria-label="Instagram"
               ><i
                 class="fa-brands fa-square-instagram"
-                aria-label="instagram"
+                aria-hidden="true"
               ></i
             ></a>
-            <a href="linkedin.com"
-              ><i class="fa-brands fa-square-linkedin" aria-label="linkedin"></i
+            <a href="linkedin.com" aria-label="LinkedIn"
+              ><i class="fa-brands fa-square-linkedin" aria-hidden="true"></i
             ></a>
           </div>
         </div>
