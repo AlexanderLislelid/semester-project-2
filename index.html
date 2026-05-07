@@ -19,44 +19,52 @@
     ></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <script type="module" crossorigin src="/semester-project-2/assets/main-UEKoX5Fy.js"></script>
-    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/toasts-FH7qcjN5.js">
-    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/loader-bRw8LTci.js">
-    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/footer-DYjfeEwm.js">
-    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/listingCard-BdBUM5n2.js">
-    <link rel="stylesheet" crossorigin href="/semester-project-2/assets/toasts-D-xKkR_d.css">
+    <title>GAVEL - Online Auctions</title>
+    <meta
+      name="description"
+      content="Browse and bid on hundreds of auctions every week. Sign up for free and start bidding on GAVEL."
+    />
+    <script type="module" crossorigin src="/semester-project-2/assets/main-_Bv-ngpi.js"></script>
+    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/toasts-kqw63ton.js">
+    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/loader-BPfGWHIS.js">
+    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/footer-Bje2jJ9x.js">
+    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/listingCard-Cg1hP_l2.js">
+    <link rel="stylesheet" crossorigin href="/semester-project-2/assets/toasts-CbAg2ef6.css">
   </head>
   <body class="bg-background flex min-h-screen flex-col">
     <main class="mx-auto flex-1">
       <div
-        class="bg-hero mt-12 flex flex-col gap-12 bg-cover bg-center p-12 text-white"
+        class="bg-hero mt-12 flex justify-end bg-cover bg-center p-8 text-white sm:p-12"
       >
-        <h1 class="font-heading text-3xl sm:text-4xl">Welcome to GAVEL</h1>
-        <p class="text-text-muted font-light">
-          Find what you're looking for. Bid what you want. Hundreds of items
-          listed every week. Sign up for free and get started.
-        </p>
-        <form id="search-form" class="flex max-w-xl">
-          <input
-            type="search"
-            name="search"
-            id="search"
-            aria-label="Search for items"
-            placeholder="Search for items"
-            class="w-full rounded-l-md border border-white/30 bg-white/10 px-4 py-2 text-white placeholder-white/60 backdrop-blur-sm focus:ring-1 focus:ring-white focus:outline-none"
-          />
-          <button
-            type="submit"
-            class="rounded-r-md bg-teal-600 px-4 text-white hover:bg-teal-700"
-            aria-label="Search"
-          >
-            <i class="fa-regular fa-magnifying-glass" aria-hidden="true"></i>
-          </button>
-        </form>
-        <div class="flex items-center gap-4 font-light">
-          <a href="./pages/login.html" class="btn-primary px-4">Log in</a>
-          <a href="./pages/register.html" class="btn-ghost">Register</a>
+        <div
+          class="flex max-w-xl flex-col gap-8 rounded-2xl bg-black/20 p-8 backdrop-blur-sm"
+        >
+          <h1 class="font-heading text-3xl sm:text-4xl">Welcome to GAVEL</h1>
+          <p class="font-light text-white/90">
+            Find what you're looking for. Bid what you want. Hundreds of items
+            listed every week. Sign up for free and get started.
+          </p>
+          <form id="search-form" class="flex">
+            <input
+              type="search"
+              name="search"
+              id="search"
+              aria-label="Search for items"
+              placeholder="Search for items"
+              class="w-full rounded-l-md border border-white/30 bg-white/10 px-4 py-2 text-white placeholder-white/60 focus:ring-1 focus:ring-white focus:outline-none"
+            />
+            <button
+              type="submit"
+              class="rounded-r-md bg-teal-600 px-4 text-white hover:bg-teal-700"
+              aria-label="Search"
+            >
+              <i class="fa-regular fa-magnifying-glass" aria-hidden="true"></i>
+            </button>
+          </form>
+          <div class="flex items-center justify-end gap-4 font-light">
+            <a href="./pages/login.html" class="btn-primary px-4">Log in</a>
+            <a href="./pages/register.html" class="btn-ghost">Register</a>
+          </div>
         </div>
       </div>
       <div

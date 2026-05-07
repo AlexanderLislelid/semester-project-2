@@ -1,0 +1,1 @@
+var e=`/semester-project-2/`.replace(/\/$/,``);function t(t,n){setTimeout(()=>{window.location.href=`${e}/${n}`},t)}export{t};
