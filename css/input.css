@@ -5,27 +5,22 @@
   --font-heading: "Playfair Display", Georgia, serif;
 
   /* Colors */
-
   --color-background: #f2f2f2;
   --color-card: #ffffff;
   --color-edges: #dddddd;
   --color-text-muted: #aaaaaa;
+  --color-text-secondary: #767676; /* Text  */
   --color-dark-bg: #262626; /* Footer, hero bg */
-
-  /* Background images */
-  --background-image-hero: url("../images/gavel-hero-2.jpg");
-  --color-text-secondary: #767676;
   --color-dark-highlights: #484848;
   --color-dark-btn: #131313;
 
-  /* Accent: Use these standard tailwind colors */
-  /* light: teal-500 */ /* primary: teal-600 / hover: teal-700 */
-  /* danger: red-500 */ /* danger border: red-500/50 */
-  /* danger bg: red-500/20 */ /* success: green-500 */
-  /* success border: green-500/50 */ /* success bg: green-500/20 */
+  /* Background images */
+  --background-image-hero: url("../images/gavel-hero-2.jpg");
 
+  /* Breakpoints */
   --breakpoint-xs: 30rem; /* 480px */
 
+  /* Text size */
   --text-2xs: 10px;
 }
 
