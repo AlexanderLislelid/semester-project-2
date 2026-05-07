@@ -32,7 +32,50 @@ Click this link for a live demo [Live Demo](https://alexanderlislelid.github.io/
 git clone https://github.com/AlexanderLislelid/semester-project-2.git
 cd semester-project-2
 npm install
+```
+
+Create a `.env` file in the root of the project with the following content, and replace `your-api-key` with your Noroff API key:
+
+```env
+VITE_API_KEY=your-api-key
+```
+
+Then start the dev server:
+
+```bash
 npm run dev
+```
+
+## Scripts
+
+Start local dev server
+
+```bash
+npm run dev
+```
+
+Build for production
+
+```bash
+npm run build
+```
+
+Build and deploy to GitHub Pages
+
+```bash
+npm run deploy
+```
+
+Lint the codebase
+
+```bash
+npm run lint
+```
+
+Lint and auto-fix issues
+
+```bash
+npm run lint:fix
 ```
 
 ## Project Structure
@@ -81,7 +124,8 @@ semester-project-2/
 │   └── utils/
 │       ├── formatter.js
 │       ├── storage.js
-│       └── tabs.js
+│       ├── tabs.js
+│       └── timeout.js
 │
 ├── css/
 │   └── input.css
@@ -109,7 +153,3 @@ Uses the [Noroff Auction API](https://docs.noroff.dev/docs/v2/auction-house/list
 [Figma design files](https://www.figma.com/design/FenRtXGZdgtGz5zPXx3y8X/Auction-House-Semester-Project?node-id=1-10&t=aaLcCzIKLRJXSLL5-1)
 [Figma desktop prototype](https://www.figma.com/proto/FenRtXGZdgtGz5zPXx3y8X/Auction-House-Semester-Project?node-id=1-3&t=aaLcCzIKLRJXSLL5-1)
 [Figma mobile prototype](https://www.figma.com/proto/FenRtXGZdgtGz5zPXx3y8X/Auction-House-Semester-Project?node-id=1-10&t=aaLcCzIKLRJXSLL5-1)
-
-## License
-
-MIT
