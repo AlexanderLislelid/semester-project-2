@@ -32,33 +32,37 @@
   <body class="bg-background flex min-h-screen flex-col">
     <main class="mx-auto flex-1">
       <div
-        class="bg-hero mt-12 flex flex-col gap-12 bg-cover bg-center p-12 text-white"
+        class="bg-hero mt-12 flex justify-end bg-cover bg-center p-8 text-white sm:p-12"
       >
-        <h1 class="font-heading text-3xl sm:text-4xl">Welcome to GAVEL</h1>
-        <p class="text-text-muted font-light">
-          Find what you're looking for. Bid what you want. Hundreds of items
-          listed every week. Sign up for free and get started.
-        </p>
-        <form id="search-form" class="flex max-w-xl">
-          <input
-            type="search"
-            name="search"
-            id="search"
-            aria-label="Search for items"
-            placeholder="Search for items"
-            class="w-full rounded-l-md border border-white/30 bg-white/10 px-4 py-2 text-white placeholder-white/60 backdrop-blur-sm focus:ring-1 focus:ring-white focus:outline-none"
-          />
-          <button
-            type="submit"
-            class="rounded-r-md bg-teal-600 px-4 text-white hover:bg-teal-700"
-            aria-label="Search"
-          >
-            <i class="fa-regular fa-magnifying-glass" aria-hidden="true"></i>
-          </button>
-        </form>
-        <div class="flex items-center gap-4 font-light">
-          <a href="./pages/login.html" class="btn-primary px-4">Log in</a>
-          <a href="./pages/register.html" class="btn-ghost">Register</a>
+        <div
+          class="flex max-w-xl flex-col gap-8 rounded-2xl bg-black/20 p-8 backdrop-blur-sm"
+        >
+          <h1 class="font-heading text-3xl sm:text-4xl">Welcome to GAVEL</h1>
+          <p class="font-light text-white/90">
+            Find what you're looking for. Bid what you want. Hundreds of items
+            listed every week. Sign up for free and get started.
+          </p>
+          <form id="search-form" class="flex">
+            <input
+              type="search"
+              name="search"
+              id="search"
+              aria-label="Search for items"
+              placeholder="Search for items"
+              class="w-full rounded-l-md border border-white/30 bg-white/10 px-4 py-2 text-white placeholder-white/60 focus:ring-1 focus:ring-white focus:outline-none"
+            />
+            <button
+              type="submit"
+              class="rounded-r-md bg-teal-600 px-4 text-white hover:bg-teal-700"
+              aria-label="Search"
+            >
+              <i class="fa-regular fa-magnifying-glass" aria-hidden="true"></i>
+            </button>
+          </form>
+          <div class="flex items-center justify-end gap-4 font-light">
+            <a href="./pages/login.html" class="btn-primary px-4">Log in</a>
+            <a href="./pages/register.html" class="btn-ghost">Register</a>
+          </div>
         </div>
       </div>
       <div
