@@ -23,7 +23,7 @@ async function fetchAndRenderListing() {
 
     //data
     const listing = data.data;
-    const bids = listing.bids;
+    const bids = [...listing.bids].sort((a, b) => b.amount - a.amount);
     const images = listing.media;
 
     // tabs
@@ -48,6 +48,7 @@ async function fetchAndRenderListing() {
       amount.textContent = bid.amount;
 
       amountDiv.className = "flex items-center gap-2";
+
       card.className =
         "flex items-center border-b border-edges justify-between py-2 px-4";
       icon.className = "fa-regular fa-coins text-teal-600";
@@ -151,7 +152,7 @@ async function fetchAndRenderListing() {
     //bids
     const currentHighestBid = document.getElementById("highest-bid");
     const numberOfBids = document.getElementById("number-of-bids");
-    currentHighestBid.textContent = bids.at(-1)?.amount ?? 0;
+    currentHighestBid.textContent = bids[0]?.amount ?? 0;
     numberOfBids.textContent = bids.length;
 
     itemTitle.textContent = listing.title;
