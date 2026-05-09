@@ -1,3 +1,12 @@
+
+/**
+ * Converts a duration in milliseconds to a formatted HTML string showing days, hours, and minutes.
+ * Returns "Ended" if the value is zero or negative.
+ *
+ * @export
+ * @param {number} ms - Duration in milliseconds
+ * @returns {string} HTML string with the formatted countdown, or "Ended" if expired
+ */
 export function formatMilliseconds(ms) {
   if (ms <= 0) return "Ended";
 
