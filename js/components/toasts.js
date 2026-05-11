@@ -1,3 +1,9 @@
+/**
+ * Displays a toast notification that auto-dismisses after 2 seconds.
+ * @param {string} title - The bold heading text of the toast.
+ * @param {string} message - The smaller body text of the toast.
+ * @param {"success" | "error"} type - Controls the icon and colour scheme.
+ */
 export function showToast(title, message, type) {
   const container = document.createElement("div");
 

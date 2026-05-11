@@ -1,3 +1,10 @@
+/**
+ * Shows a fullscreen loading spinner overlay. Creates the element if it doesn't
+ * exist, or unhides it if it was previously hidden.
+ *
+ * @export
+ * @returns {void}
+ */
 export function showLoader() {
   let loader = document.getElementById("loader");
   if (loader) {
@@ -12,6 +19,12 @@ export function showLoader() {
   );
 }
 
+/**
+ * Removes the loading spinner overlay from the DOM.
+ *
+ * @export
+ * @returns {void}
+ */
 export function hideLoader() {
   const loader = document.getElementById("loader");
   if (loader) loader.remove();
