@@ -1,4 +1,4 @@
-import{l as e,r as t,s as n,u as r}from"./toasts-kqw63ton.js";var i=`/semester-project-2/`.replace(/\/$/,``);function a(){document.body.insertAdjacentHTML(`afterbegin`,`
+import{l as e,r as t,s as n,u as r}from"./toasts-DBy-Kxwt.js";var i=`/semester-project-2/`.replace(/\/$/,``);function a(){document.body.insertAdjacentHTML(`afterbegin`,`
     <nav id="nav-mobile" class="border-edges flex items-center justify-between border-b sm:hidden">
       <div class="px-2 pb-2 leading-1">
         <a href="${i}/index.html">
