@@ -24,11 +24,12 @@
       name="description"
       content="Update the details of your auction listing on GAVEL."
     />
-    <script type="module" crossorigin src="/semester-project-2/assets/edit-listing-BG0py4Do.js"></script>
-    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/toasts-DBy-Kxwt.js">
-    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/footer-CK0csO-Z.js">
-    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/timeout-BI10fWNB.js">
-    <link rel="stylesheet" crossorigin href="/semester-project-2/assets/toasts-uxv95lEU.css">
+    <script type="module" crossorigin src="/semester-project-2/assets/edit-listing-B1BrruVZ.js"></script>
+    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/apiClient-CzlMaPmi.js">
+    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/footer-hEDKPWDq.js">
+    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/toasts-CluJALb9.js">
+    <link rel="modulepreload" crossorigin href="/semester-project-2/assets/timeout-DiyFkVHv.js">
+    <link rel="stylesheet" crossorigin href="/semester-project-2/assets/apiClient-rtdrZ1RO.css">
   </head>
   <body class="bg-background flex min-h-screen flex-col">
     <main class="flex-1">
@@ -71,7 +72,9 @@
             Separate tags with commas. Ex Vintage, leather
           </p>
         </div>
-        <div id="media-wrapper" class="flex flex-col gap-2"></div>
+        <div id="media-wrapper" class="flex flex-col gap-2">
+          <p id="remove-msg" class="text-text-secondary italic"></p>
+        </div>
         <div class="flex flex-col gap-1">
           <label for="media-url">Media</label>
           <input
@@ -94,7 +97,8 @@
             </button>
           </div>
           <p class="text-text-secondary text-sm">
-            Add an alt text to the image
+            Add an alt text to the image and click the add image button to
+            upload
           </p>
         </div>
         <div class="flex flex-col items-start gap-1">
