@@ -32,6 +32,13 @@ async function fillForm() {
     tags.value = item.tags;
     endDate.value = new Date(item.endsAt).toISOString().slice(0, 16);
 
+    const removeMsg = document.getElementById("remove-msg");
+    if (item.media.length !== 0) {
+      removeMsg.textContent = "Click images to remove them";
+    } else {
+      removeMsg.textContent = "";
+    }
+
     function renderImage(media) {
       images.push(media);
       const wrapper = document.createElement("div");
