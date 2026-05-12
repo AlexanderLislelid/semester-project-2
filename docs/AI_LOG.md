@@ -176,6 +176,15 @@
 
 ---
 
+## Entry 18
+
+- **Tool used:** Claude
+- **Date:** 12 May 2026
+- **Purpose:** Generate placeholder text for the About Us and How It Works pages
+- **Outcome:** Got filler content used as placeholder text on both pages
+
+---
+
 ## Note on AI usage
 
 Throughout this project I have written the code myself. AI has been used as a helper tool for explanations, debugging hints, and suggestions, but not to generate or replace my own code.
