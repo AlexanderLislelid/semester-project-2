@@ -19,6 +19,8 @@ export default ({ command }) => ({
         "single-listing": resolve(__dirname, "pages/single-listing.html"),
         "create-listing": resolve(__dirname, "pages/create-listing.html"),
         "edit-listing": resolve(__dirname, "pages/edit-listing.html"),
+        "how-it-works": resolve(__dirname, "pages/info/how-it-works.html"),
+        "about-us": resolve(__dirname, "pages/info/about-us.html"),
       },
     },
   },

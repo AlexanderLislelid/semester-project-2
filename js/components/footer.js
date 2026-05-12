@@ -30,9 +30,9 @@ function initFooter() {
         </div>
         <div class="p-8 flex flex-col gap-2 font-light">
           <h3 class="text-white font-heading text-xl mb-4">Company</h3>
-          <a href="#" class="hover:text-white">How it works</a>
-          <a href="#" class="hover:text-white">My Bids</a>
-          <a href="#" class="hover:text-white">About Us</a>
+          <a href="${import.meta.env.BASE_URL}pages/info/how-it-works.html" class="hover:text-white">How it works</a>
+          <a href="${import.meta.env.BASE_URL}pages/profile.html" class="hover:text-white">My Bids</a>
+          <a href="${import.meta.env.BASE_URL}pages/info/about-us.html" class="hover:text-white">About Us</a>
           <a href="#" class="hover:text-white">Carreers</a>
           <a href="#" class="hover:text-white">Press</a>
           <a href="#" class="hover:text-white">Blog</a>
