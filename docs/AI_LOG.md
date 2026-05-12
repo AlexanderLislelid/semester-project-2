@@ -16,7 +16,7 @@
 - **Tool used:** Claude
 - **Date:** 13 April 2026
 - **Purpose:** Brainstorm brand name ideas and generate logos to choose from based on a price tag and a coin
-- **Outcome:** Landed on Marketeer as a brand name and imported both logos to Figma to see how they will look on the high-fidelity prototype later
+- **Outcome:** Landed on Marketeer as a brand name and imported both logos to Figma to see how they will look on the high-fidelity prototype later. (ended up scrapping both brand name and the logo)
 
 ---
 
@@ -188,3 +188,5 @@
 ## Note on AI usage
 
 Throughout this project I have written the code myself. AI has been used as a helper tool for explanations, debugging hints, and suggestions, but not to generate or replace my own code.
+
+Please note that not all AI interactions are included in this log. Some sporadic prompts have not been logged, as they were minor and used purely for understanding small things along the way.
