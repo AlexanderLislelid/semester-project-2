@@ -96,7 +96,10 @@ semester-project-2/
 │   ├── single-listing.html
 │   ├── create-listing.html
 │   ├── edit-listing.html
-│   └── edit-profile.html
+│   ├── edit-profile.html
+│   └── info/
+│       ├── about-us.html
+│       └── how-it-works.html
 │
 ├── js/
 │   ├── api/
@@ -137,6 +140,9 @@ semester-project-2/
 ├── public/
 │   └── images/
 │       └── placeholder.png
+│
+├── docs/
+│   └── AI_LOG.md
 │
 └── favicon_io/
     ├── favicon.ico
