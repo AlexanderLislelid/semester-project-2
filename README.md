@@ -133,13 +133,11 @@ semester-project-2/
 ├── css/
 │   └── input.css
 │
-├── images/
-│   ├── gavel-hero.jpg
-│   └── gavel-hero-2.jpg
-│
 ├── public/
 │   └── images/
-│       └── placeholder.png
+│       ├── placeholder.png
+│       ├── gavel-hero.jpg
+│       └── gavel-hero-2.jpg
 │
 ├── docs/
 │   └── AI_LOG.md

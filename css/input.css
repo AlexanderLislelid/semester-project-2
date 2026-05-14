@@ -15,7 +15,7 @@
   --color-dark-btn: #131313;
 
   /* Background images */
-  --background-image-hero: url("../images/gavel-hero-2.jpg");
+  --background-image-hero: url("/images/gavel-hero-2.jpg");
 
   /* Breakpoints */
   --breakpoint-xs: 30rem; /* 480px */
