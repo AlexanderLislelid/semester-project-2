@@ -1,4 +1,4 @@
-import{c as e,l as t,n,o as r}from"./apiClient-CzlMaPmi.js";var i=`/semester-project-2/`.replace(/\/$/,``);function a(){document.body.insertAdjacentHTML(`afterbegin`,`
+import{c as e,l as t,n,o as r}from"./apiClient-CUg5XQj8.js";var i=`/semester-project-2/`.replace(/\/$/,``);function a(){document.body.insertAdjacentHTML(`afterbegin`,`
     <nav id="nav-mobile" class="border-edges flex items-center justify-between border-b sm:hidden">
       <div class="px-2 pb-2 leading-1">
         <a href="${i}/index.html">
